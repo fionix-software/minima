@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="application"
+        android:title="Application">
+
+        <Preference
+            android:key="preference_table"
+            android:summary="Create table, view your timetable and save as png."
+            android:title="Create Table" />
+
+        <Preference
+            android:key="preference_reset"
+            android:summary="Remove all course and clear the timetable"
+            android:title="Reset Timetable" />
+
+        <Preference
+            android:key="preference_guide"
+            android:summary="Click here for basic guide and walkthrough"
+            android:title="Guide" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="link"
+        android:title="Link">
+
+        <Preference
+            android:key="preference_icress"
+            android:summary="It will use your Android phone's browser"
+            android:title="Open iCress" />
+
+        <Preference
+            android:key="preference_student_portal"
+            android:summary="It will use your Android phone's browser"
+            android:title="Open Student Portal" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="about"
+        android:title="About">
+
+        <Preference
+            android:key="preference_email"
+            android:summary="Give feedback via email"
+            android:title="Feedback" />
+
+        <Preference
+            android:key="preference_conribute"
+            android:summary="Redirect to Github repository"
+            android:title="Contribute" />
+
+        <Preference
+            android:key="preference_version"
+            android:summary="Nazeb Zurati, FioNix Softwork"
+            android:title="Minima v0.0" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

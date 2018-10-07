@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- app -->
+    <string name="app_name">Minima</string>
+    <string name="title_course">Course</string>
+    <string name="title_timetable">Timetable</string>
+    <string name="title_setting">Setting</string>
+    <string name="action_view">Fionix</string>
+    <string name="splash_screen">Splash Screen</string>
+
+    <!-- Intro -->
+    <string name="intro1">The developer of this project already complete his studies and he unable to support this application at full-time because he already secured working.</string>
+    <string name="intro2">This application already made open-sourced and licensed under GNU General Public License v3.0. Let\'s make Minima better together.</string>
+    <string name="intro3">You can contribute by reporting issues, fixed issues reported by using the pull request (PR) and introduce the app to your friends.</string>
+    <string name="intro4">Approach the developer if you want to help porting Minima to another platform (such as iOS and Windows Phone) financially. It requires a large amount of cash to develop and publish them.</string>
+    <string name="intro5">The application is distributed for free without taking any advantage of the user. Please respect and appreciate his work. Thank you for using Minima.</string>
+    <string name="start">Start</string>
+
+    <!-- course -->
+    <string name="course_add">Add Course</string>
+    <string name="course_list">Course List</string>
+    <string name="course_faculty">Faculty</string>
+    <string name="course_dialog_course_code">Course Code (Ex: EEE610)</string>
+    <string name="course_dialog_course_name">Course Name</string>
+    <string name="course_dialog_group_code">Group Code (Ex: EE241C7A)</string>
+    <string name="course_dialog_extra">The guide can be found in the Setting tab. Please delete any unrelated course by check the course\'s faculty. This process is done automatically. Lowercase letters are acceptable.</string>
+
+    <!-- timetable -->
+    <string name="timetable_recheck">Recheck Timetable Online</string>
+    <string name="timetable_list">Timetable List</string>
+    <string name="timetable_save">Save as PNG</string>
+
+    <!-- common -->
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="not_available">n/a</string>
+    <string name="refresh">Refresh</string>
+
+    <!-- guide -->
+    <string name="guide">
+        This application is based on iCress website.
+        Any information regarding your timetable or course registration is not hosted by Minima developer.
+        You can add your course by press the \"Add course\" button on the top of the screen.
+        You need to fill your \"Course code\" and \"Group name\" based on your course registration slip.
+        Press \"Add\" button to find for the course specified online.
+        It will automatically add if there is course available.
+        Long press on a course to edit the course name or delete the course from your timetable.
+        Press back to cancel the option.
+        You can automatically recheck your timetable for changes on iCress by clicking \"Recheck Timetable Online\".
+        This functionality is replaced by the \"Open Student Portal\" setting.
+        It will open student portal using your Android phone\'s default browser.
+        You can send feedback via email by clicking on the \"Feedback\" option.
+        Press \"Minima vX.X.X\" setting to visit the company website.
+        You can now save table as image by clicking \"Create Table\" setting and click on \"Save as PNG\" button.
+        You can also reset all your timetable data, including courses by click on the \"Reset Timetable\".
+        You can refresh your timetable by clicking the top right icon on the widget.
+        You can also open your timetable directly from widget by clicking on the day display on the widget.
+        This option only natively available for Android 7.1 and above or use any compatible launcher application available in the Play Store.
+        You can long press the application icon to see the two shortcuts available: iCress and simsweb.
+        These shortcuts can be dragged into your home screen.
+        These shortcuts will open iCress or simsweb webpage from your default browser.
+    </string>
+
+</resources>
