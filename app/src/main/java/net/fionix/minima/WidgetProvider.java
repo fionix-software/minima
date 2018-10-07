@@ -98,13 +98,13 @@ public class WidgetProvider extends AppWidgetProvider {
         super.onReceive(context, intent);
         String action = intent.getAction();
 
+        // refresh widget
         if (action.equals("refresh")) {
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             int widgetIds[] = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
             onUpdate(context, appWidgetManager, widgetIds);
             appWidgetManager.updateAppWidget(new ComponentName(context, WidgetProvider.class), remoteViews);
-
             Toast.makeText(context, "Refreshed!", Toast.LENGTH_SHORT).show();
         }
     }

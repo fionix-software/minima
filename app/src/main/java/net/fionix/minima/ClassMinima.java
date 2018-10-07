@@ -322,7 +322,7 @@ public class ClassMinima {
             dayCode = 'Z';
         }
 
-        String html = "<tr><td style=\"background: #D3D3D3;\">" + day + "</td>";
+        String html = "<tr><td style=\"background: rgb(211,211,211);\">" + day + "</td>";
 
         int lastEndCol = 0, colspan = 0;
         for (int i = 0; i < arrayListTimetable.size(); i++) {
@@ -366,10 +366,10 @@ public class ClassMinima {
                     colspan = colStart - 2;
                 }
                 if (colspan > 1) {
-                    html += "<td style=\"background: #A9A9A9;\" colspan=\"" + colspan + "\"></td>";
+                    html += "<td style=\"background: rgb(169,169,169);\" colspan=\"" + colspan + "\"></td>";
                 }
                 if (colspan == 1) {
-                    html += "<td style=\"background: #A9A9A9;\"></td>";
+                    html += "<td style=\"background: rgb(169,169,169);\"></td>";
                 }
 
                 // timetable
@@ -395,7 +395,7 @@ public class ClassMinima {
         else {
             colspan = 31 - 1;
         }
-        html += "<td style=\"background: #A9A9A9;\" colspan=\"" + colspan + "\"></td>";
+        html += "<td style=\"background: rgb(169,169,169);\" colspan=\"" + colspan + "\"></td>";
         html += "</tr>";
 
         return html;

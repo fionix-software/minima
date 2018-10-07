@@ -123,6 +123,9 @@ public class ActivityCourse extends Fragment {
                 dialogEdit.setCanceledOnTouchOutside(false);
                 dialogEdit.setContentView(R.layout.dialog_edit);
 
+                // check latest data
+                arrayListCourse = ClassMinima.loadCourse(getContext());
+
                 // adding interface component
                 final Button buttonSave = (Button) dialogEdit.findViewById(R.id.button1);
                 final Button buttonDelete = (Button) dialogEdit.findViewById(R.id.button2);

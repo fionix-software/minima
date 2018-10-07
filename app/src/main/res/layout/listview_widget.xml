@@ -6,7 +6,7 @@
     android:layout_weight="1"
     android:background="@android:color/white"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/textViewCourseName"
@@ -33,6 +33,7 @@
             android:text="@string/not_available"
             android:textAlignment="textStart"
             android:textColor="@color/colorAccent"
+            android:textSize="12sp"
             tools:ignore="HardcodedText,NestedWeights" />
 
         <TextView
@@ -43,6 +44,7 @@
             android:gravity="center_vertical|end"
             android:text="@string/not_available"
             android:textColor="@color/colorAccent"
+            android:textSize="12sp"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
@@ -61,6 +63,7 @@
             android:gravity="center_vertical|start"
             android:text="@string/not_available"
             android:textColor="@color/colorAccent"
+            android:textSize="12sp"
             tools:ignore="HardcodedText,NestedWeights" />
 
         <TextView
@@ -71,6 +74,7 @@
             android:gravity="center_vertical|end"
             android:text="@string/not_available"
             android:textColor="@color/colorAccent"
+            android:textSize="12sp"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 

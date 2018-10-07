@@ -68,43 +68,43 @@ public class AdapterTimetable extends ArrayAdapter<ClassTimetable> {
         switch (day) {
             case Calendar.MONDAY:
                 if (!dataSet.get(position).day.equals("Monday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
 
             case Calendar.TUESDAY:
                 if (!dataSet.get(position).day.equals("Tuesday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
 
             case Calendar.WEDNESDAY:
                 if (!dataSet.get(position).day.equals("Wednesday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
 
             case Calendar.THURSDAY:
                 if (!dataSet.get(position).day.equals("Thursday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
 
             case Calendar.FRIDAY:
                 if (!dataSet.get(position).day.equals("Friday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
 
             case Calendar.SATURDAY:
                 if (!dataSet.get(position).day.equals("Saturday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
 
             case Calendar.SUNDAY:
                 if (!dataSet.get(position).day.equals("Sunday")) {
-                    indicator.setVisibility(View.INVISIBLE);
+                    indicator.setVisibility(View.GONE);
                 }
                 break;
         }
