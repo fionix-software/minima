@@ -58,11 +58,11 @@ public class WidgetFactory implements RemoteViewsService.RemoteViewsFactory {
             }
         }
 
-        row.setTextViewText(R.id.textView1, courseName);
-        row.setTextViewText(R.id.textView2, arrayListTimetable.get(i).course);
-        row.setTextViewText(R.id.textView3, arrayListTimetable.get(i).group);
-        row.setTextViewText(R.id.textView4, arrayListTimetable.get(i).start + " - " + arrayListTimetable.get(i).end);
-        row.setTextViewText(R.id.textView5, arrayListTimetable.get(i).location.toUpperCase());
+        row.setTextViewText(R.id.textViewCourseName, courseName);
+        row.setTextViewText(R.id.textViewCourseCode, arrayListTimetable.get(i).course);
+        row.setTextViewText(R.id.textViewGroup, arrayListTimetable.get(i).group);
+        row.setTextViewText(R.id.textViewTime, arrayListTimetable.get(i).start + " - " + arrayListTimetable.get(i).end);
+        row.setTextViewText(R.id.textViewLocation, arrayListTimetable.get(i).location.toUpperCase());
         return row;
     }
 
