@@ -32,7 +32,7 @@ public class WidgetProvider extends AppWidgetProvider {
             remoteViews.setOnClickPendingIntent(R.id.imageView1, getPendingSelfIntent(context, "refresh"));
 
             // open apps
-            Intent openMainAppIntent = new Intent(context, ActivityMain.class);
+            Intent openMainAppIntent = new Intent(context, ActivitySplash.class);
             openMainAppIntent.putExtra("Source", "Widget");
             PendingIntent openMainAppPendingIntent = PendingIntent.getActivity(context, 0, openMainAppIntent, 0);
             remoteViews.setOnClickPendingIntent(R.id.textView1, openMainAppPendingIntent);
