@@ -10,8 +10,8 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/course_dialog_course_code"
         android:labelFor="@id/editText1"
+        android:text="@string/course_dialog_course_code"
         tools:layout_editor_absoluteX="7dp"
         tools:layout_editor_absoluteY="1dp" />
 
@@ -20,11 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="1dp"
-        android:importantForAutofill="no"
-        tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/textView2"
@@ -40,11 +40,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="1dp"
-        android:importantForAutofill="no"
-        tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <ProgressBar
         android:id="@+id/progressBar"

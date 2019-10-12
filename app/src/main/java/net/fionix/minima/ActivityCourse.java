@@ -17,10 +17,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by nazebzurati on 16/09/2017.
- */
-
 public class ActivityCourse extends Fragment {
 
     public static ListView listview;

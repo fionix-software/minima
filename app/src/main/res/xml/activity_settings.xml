@@ -54,7 +54,7 @@
 
         <Preference
             android:key="preference_version"
-            android:summary="Nazeb Zurati, FioNix Softwork"
+            android:summary="Nazeb Zurati"
             android:title="Minima v0.0" />
 
     </PreferenceCategory>

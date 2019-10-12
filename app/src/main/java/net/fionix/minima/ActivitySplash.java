@@ -2,9 +2,9 @@ package net.fionix.minima;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class ActivitySplash extends AppCompatActivity {
 
@@ -28,8 +28,7 @@ public class ActivitySplash extends AppCompatActivity {
                     if (first) {
                         Intent intent = new Intent(getApplicationContext(), ActivityIntro.class);
                         startActivity(intent);
-                    }
-                    else {
+                    } else {
                         Intent intent = new Intent(getApplicationContext(), ActivityMain.class);
                         startActivity(intent);
                     }

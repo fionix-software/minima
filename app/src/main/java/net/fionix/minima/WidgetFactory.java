@@ -7,7 +7,6 @@ import android.widget.RemoteViewsService;
 
 import java.util.ArrayList;
 
-
 public class WidgetFactory implements RemoteViewsService.RemoteViewsFactory {
 
     public Context context;

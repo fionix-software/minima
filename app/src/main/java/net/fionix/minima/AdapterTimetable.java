@@ -11,10 +11,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/**
- * Created by nazebzurati on 15/09/2017.
- */
-
 public class AdapterTimetable extends ArrayAdapter<ClassTimetable> {
 
     Context mContext;

@@ -1,9 +1,5 @@
 package net.fionix.minima;
 
-/**
- * Created by nazebzurati on 15/09/2017.
- */
-
 public class ClassTimetable {
     public String course, group, start, end, location, day, dayCode;
 

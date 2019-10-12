@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,9 +27,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by nazebzurati on 10/31/17.
- */
+import static android.support.constraint.Constraints.TAG;
 
 public class ClassMinima {
 
@@ -391,8 +390,7 @@ public class ClassMinima {
         // fill timetable
         if (lastEndCol > 0) {
             colspan = 31 - lastEndCol;
-        }
-        else {
+        } else {
             colspan = 31 - 1;
         }
         html += "<td style=\"background: rgb(169,169,169);\" colspan=\"" + colspan + "\"></td>";
@@ -547,7 +545,6 @@ public class ClassMinima {
             String timeIndex;
 
             for (int i = 0; i < arrayListFaculty.size(); i++) {
-                // Log.d("Code: ", arrayListFaculty.get(i).code);
                 try {
                     htmlDoc = Jsoup.connect("http://icress.uitm.edu.my/jadual/" + arrayListFaculty.get(i).code + "/" + course + ".html").get();
                     for (Element table : htmlDoc.select("table")) {

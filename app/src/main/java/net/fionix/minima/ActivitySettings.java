@@ -56,7 +56,7 @@ public class ActivitySettings extends PreferenceFragmentCompat {
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        switch (which){
+                        switch (which) {
                             case DialogInterface.BUTTON_POSITIVE:
 
                                 // resets timetable, course and faculty
@@ -129,7 +129,7 @@ public class ActivitySettings extends PreferenceFragmentCompat {
         preference_email.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                String[] TO = {"nazebzurati@fionix.net"};
+                String[] TO = {"nazeb04@gmail.com"};
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setData(Uri.parse("mailto:"));
                 emailIntent.setType("message/rfc822");
@@ -190,7 +190,7 @@ public class ActivitySettings extends PreferenceFragmentCompat {
         preference_version.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fionix.net"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/nazebzurati"));
                 startActivity(browserIntent);
 
                 return true;
