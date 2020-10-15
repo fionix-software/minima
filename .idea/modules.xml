@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="minima/app" />
-      <module fileurl="file://$PROJECT_DIR$/minima.iml" filepath="$PROJECT_DIR$/minima.iml" group="minima" />
+      <module fileurl="file://$PROJECT_DIR$/minima.iml" filepath="$PROJECT_DIR$/minima.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/minima.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/minima.app.iml" />
     </modules>
   </component>
 </project>
