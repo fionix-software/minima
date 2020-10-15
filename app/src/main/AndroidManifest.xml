@@ -53,11 +53,9 @@
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
-        <activity android:name=".ActivityTable"></activity>
+        <activity android:name=".ActivityTable" />
 
-        <activity android:name=".ActivityMain"></activity>
-
-        <activity android:name=".ActivityIntro"></activity>
+        <activity android:name=".ActivityMain" />
 
     </application>
 
