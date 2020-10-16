@@ -16,8 +16,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
-import net.fionix.minima.model.EntityFaculty
 import net.fionix.minima.model.EntityTimetable
+import net.fionix.minima.model.ModelFaculty
 import net.fionix.minima.util.ScraperICress
 
 class DialogAdd(context: Context) : Dialog(context) {
@@ -59,7 +59,7 @@ class DialogAdd(context: Context) : Dialog(context) {
             GlobalScope.launch(Dispatchers.IO) {
 
                 // retrieve faculty
-                val facultyList: ArrayList<EntityFaculty> = ScraperICress.retrieveFacultyList()
+                val facultyList: ArrayList<ModelFaculty> = ScraperICress.retrieveFacultyList()
                 if (facultyList.isEmpty()) {
                     // notify
                     withContext(Dispatchers.Main) {

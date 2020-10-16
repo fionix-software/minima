@@ -1,8 +1,8 @@
 package net.fionix.minima.util
 
-import net.fionix.minima.model.EntityCourse
-import net.fionix.minima.model.EntityFaculty
 import net.fionix.minima.model.EntityTimetable
+import net.fionix.minima.model.ModelCourse
+import net.fionix.minima.model.ModelFaculty
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import java.io.IOException
@@ -17,23 +17,23 @@ class ScraperICress {
         private const val timetableScrapableLinkPrefix: String = "http://icress.uitm.edu.my/jadual/"
         private const val timeoutInMillis: Int = 500
 
-        fun retrieveFacultyList(): ArrayList<EntityFaculty> {
+        fun retrieveFacultyList(): ArrayList<ModelFaculty> {
 
             // retrieve page
             var doc: Document?
             try {
                 doc = Jsoup.connect(facultyScrapableLink).timeout(timeoutInMillis).get()
             } catch (e: IOException) {
-                return arrayListOf<EntityFaculty>()
+                return arrayListOf<ModelFaculty>()
             }
 
             // parse faculty list
-            val arrayList = arrayListOf<EntityFaculty>()
+            val arrayList = arrayListOf<ModelFaculty>()
             if (doc != null) {
                 val list = doc.select("option")
                 for (item in list) {
                     val temp: String = item.html().toString().replace(" \\[".toRegex(), ", ").replace(" &amp; ".toRegex(), " ").replace("\\(".toRegex(), "").replace("\\)".toRegex(), "").toUpperCase(Locale.getDefault())
-                    arrayList.add(EntityFaculty(0, temp.substring(0, min(temp.length, 2)), temp.substring(3, temp.length)))
+                    arrayList.add(ModelFaculty(temp.substring(0, min(temp.length, 2)), temp.substring(3, temp.length)))
                 }
             }
 
@@ -42,7 +42,7 @@ class ScraperICress {
         }
 
 
-        fun retrieveTimetable(facultyList: ArrayList<EntityFaculty>, courseCode: String, courseGroup: String): ArrayList<EntityTimetable> {
+        fun retrieveTimetable(facultyList: ArrayList<ModelFaculty>, courseCode: String, courseGroup: String): ArrayList<EntityTimetable> {
 
             // retrieve page
             val arrayList = arrayListOf<EntityTimetable>()
@@ -61,8 +61,8 @@ class ScraperICress {
                     for (row in table.select("tr")) {
                         val tds = row.select("td")
                         if (tds[0].text().toLowerCase(Locale.getDefault()).contains(courseGroup.toLowerCase(Locale.getDefault()))) {
-                            val course: EntityCourse = EntityCourse(0, faculty, courseCode, courseGroup)
-                            arrayList.add(EntityTimetable(0, course, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
+                            val course: ModelCourse = ModelCourse(courseCode, courseGroup, faculty.facultyCode, faculty.facultyName)
+                            arrayList.add(EntityTimetable(0, courseCode, courseGroup, faculty.facultyCode, faculty.facultyName, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
                         }
                     }
                 }

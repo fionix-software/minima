@@ -1,16 +1,21 @@
 package net.fionix.minima.model
 
 import androidx.room.ColumnInfo
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class EntityTimetable(
+data class EntityTimetable(
         @PrimaryKey(autoGenerate = true)
         val timetableId: Int,
-        @Embedded
-        val timetableCourse: EntityCourse,
+        @ColumnInfo
+        override val courseCode: String,
+        @ColumnInfo
+        override val courseGroup: String,
+        @ColumnInfo
+        override val facultyCode: String,
+        @ColumnInfo
+        override val facultyName: String,
         @ColumnInfo
         val timetableTimeStart: String,
         @ColumnInfo
@@ -19,4 +24,4 @@ class EntityTimetable(
         val timetableDay: String,
         @ColumnInfo
         val timetableVenue: String,
-)
+) : IModelCourse
