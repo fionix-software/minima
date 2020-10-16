@@ -18,12 +18,15 @@ class ActivityMain : AppCompatActivity() {
         bottomNav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_view -> {
+                    supportActionBar!!.title = "Course List"
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivityCourse()).commit()
                 }
                 R.id.navigation_list -> {
+                    supportActionBar!!.title = "Timetable List"
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivityTimetable()).commit()
                 }
                 R.id.navigation_setting -> {
+                    supportActionBar!!.title = "Settings"
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivitySettings()).commit()
                 }
             }
@@ -31,6 +34,7 @@ class ActivityMain : AppCompatActivity() {
         }
 
         // open default
+        supportActionBar!!.title = "Course List"
         supportFragmentManager.beginTransaction().replace(R.id.content, ActivityCourse()).commit()
     }
 }
