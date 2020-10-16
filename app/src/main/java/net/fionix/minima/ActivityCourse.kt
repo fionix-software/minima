@@ -19,7 +19,9 @@ class ActivityCourse : Fragment() {
         // add button
         val addButton: Button = view.findViewById(R.id.button)
         addButton.setOnClickListener {
-            // todo: add button implementation to add item
+            // show add course dialog
+            val dialog = DialogAdd(view.context)
+            dialog.show()
         }
 
         // course list

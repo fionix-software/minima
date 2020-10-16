@@ -27,7 +27,7 @@ class ActivityMain : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivitySettings()).commit()
                 }
             }
-            false
+            true
         }
 
         // open default

@@ -18,7 +18,7 @@ class ActivityTimetable : Fragment() {
         // recheck timetable from iCress button
         val recheckButton: Button = view.findViewById(R.id.button)
         recheckButton.setOnClickListener {
-            // todo: add button implementation to add item
+            // todo: recheck timetable from iCress and update database if necessary
         }
 
         // timetable list

@@ -19,61 +19,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91e51a0-d072-48bb-b116-ed6ac4f35984" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/database/DaoCourse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/database/DaoFaculty.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/database/DaoTimetable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/database/Database.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/EntityCourse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/EntityFaculty.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/EntityTimetable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ClassMinima.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/DialogAdd.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityIntro.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityMain.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySplash.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySplash.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTable.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/adapter/AdapterCourse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/adapter/AdapterTimetable.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/ClassCourse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/ClassFaculty.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/ClassMinima.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/ClassTimetable.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/widget/WidgetFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/widget/WidgetFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/minima.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_intro.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +37,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_29]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -307,22 +260,22 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602772276138" />
-    <state width="1291" height="251" key="GridCell.Tab.0.bottom" timestamp="1602766580692">
+    <state width="1291" height="213" key="GridCell.Tab.0.bottom" timestamp="1602830271986">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="251" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602766580692" />
-    <state width="1291" height="251" key="GridCell.Tab.0.center" timestamp="1602766580692">
+    <state width="1291" height="213" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602830271986" />
+    <state width="1291" height="213" key="GridCell.Tab.0.center" timestamp="1602830271986">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="251" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602766580692" />
-    <state width="1291" height="251" key="GridCell.Tab.0.left" timestamp="1602766580692">
+    <state width="1291" height="213" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602830271986" />
+    <state width="1291" height="213" key="GridCell.Tab.0.left" timestamp="1602830271985">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="251" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602766580692" />
-    <state width="1291" height="251" key="GridCell.Tab.0.right" timestamp="1602766580692">
+    <state width="1291" height="213" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602830271985" />
+    <state width="1291" height="213" key="GridCell.Tab.0.right" timestamp="1602830271986">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="251" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602766580692" />
+    <state width="1291" height="213" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602830271986" />
     <state x="2260" y="150" width="991" height="661" key="SettingsEditor" timestamp="1602771452119">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
