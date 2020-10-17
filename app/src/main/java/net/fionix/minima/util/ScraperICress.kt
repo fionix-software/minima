@@ -67,7 +67,7 @@ class ScraperICress {
                         // tds[5]: status
                         // tds[6]: room
                         if (tds[0].text().toLowerCase(Locale.getDefault()).contains(courseGroup.toLowerCase(Locale.getDefault()))) {
-                            arrayList.add(EntityTimetable(0, courseCode, "", courseGroup, faculty.facultyCode, faculty.facultyName, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
+                            arrayList.add(EntityTimetable(0, courseCode.toUpperCase(Locale.getDefault()), "", courseGroup.toUpperCase(Locale.getDefault()), faculty.facultyCode, faculty.facultyName, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
                         }
                     }
                 }

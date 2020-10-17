@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import net.fionix.minima.R
-import net.fionix.minima.model.ModelCourse
-import net.fionix.minima.util.OnCourseItemLongClickListener
+import net.fionix.minima.model.EntityTimetable
+import net.fionix.minima.util.OnTimetableItemLongClickListener
 
-class AdapterCourse(private val dataset: MutableList<ModelCourse>, private val onCourseItemLongClickListener: OnCourseItemLongClickListener) : RecyclerView.Adapter<AdapterCourse.ViewHolder>() {
+class AdapterTimetable(private val dataset: MutableList<EntityTimetable>, private val onTimetableItemLongClickListener: OnTimetableItemLongClickListener) : RecyclerView.Adapter<AdapterTimetable.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val context: Context = itemView.context
@@ -19,12 +19,12 @@ class AdapterCourse(private val dataset: MutableList<ModelCourse>, private val o
         val tertiaryText: TextView = itemView.findViewById(R.id.tertiary_text)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterCourse.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterTimetable.ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_three_line, parent, false)
         return ViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: AdapterCourse.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AdapterTimetable.ViewHolder, position: Int) {
 
         // title
         var courseCode: String = dataset[position].courseCode
@@ -34,15 +34,15 @@ class AdapterCourse(private val dataset: MutableList<ModelCourse>, private val o
         holder.titleText.text = courseCode
 
         // secondary
-        val secondaryString: String = dataset[position].facultyName + " (" + dataset[position].facultyCode + ")"
+        val secondaryString: String = dataset[position].timetableDay + ", " + dataset[position].timetableTimeStart + " - " + dataset[position].timetableTimeEnd
         holder.secondaryText.text = secondaryString
 
         // tertiary
-        holder.tertiaryText.text = dataset[position].courseGroup
+        holder.tertiaryText.text = dataset[position].timetableVenue
 
         // set on long click listener
         holder.itemView.setOnLongClickListener {
-            onCourseItemLongClickListener.onCourseItemLongClickListener(dataset[position])
+            onTimetableItemLongClickListener.onTimetableItemLongClickListener(dataset[position])
             true
         }
     }

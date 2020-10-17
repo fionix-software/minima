@@ -17,12 +17,15 @@ interface DaoTimetable {
     fun getCourseList(): Cursor
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(timetable: EntityTimetable)
+    fun insert(timetable: EntityTimetable)
 
     @Query("UPDATE EntityTimetable SET courseName=:courseName WHERE courseCode=:courseCode AND courseGroup=:courseGroup AND facultyCode=:facultyCode AND facultyName=:facultyName")
-    suspend fun updateName(courseCode: String, courseName: String, courseGroup: String, facultyCode: String, facultyName: String)
+    fun updateName(courseCode: String, courseName: String, courseGroup: String, facultyCode: String, facultyName: String)
 
     @Query("DELETE FROM EntityTimetable WHERE courseCode=:courseCode AND courseName=:courseName AND courseGroup=:courseGroup AND facultyCode=:facultyCode AND facultyName=:facultyName")
-    suspend fun deleteByCourse(courseCode: String, courseName: String, courseGroup: String, facultyCode: String, facultyName: String)
+    fun deleteByCourse(courseCode: String, courseName: String, courseGroup: String, facultyCode: String, facultyName: String)
+
+    @Query("DELETE FROM EntityTimetable")
+    fun clearData()
 
 }

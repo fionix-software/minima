@@ -2,6 +2,7 @@ package net.fionix.minima
 
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
@@ -29,7 +30,6 @@ class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
 
         // edit text
         val courseNameEditText: EditText = findViewById(R.id.editText1)
-        courseNameEditText.setText(if (data.courseName.isEmpty()) context.getString(R.string.not_available) else data.courseName)
 
         // save button
         val saveButton: Button = findViewById(R.id.saveButton)

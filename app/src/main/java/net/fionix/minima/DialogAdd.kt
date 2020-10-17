@@ -1,10 +1,8 @@
 package net.fionix.minima
 
 import android.app.Dialog
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.Button
@@ -90,9 +88,9 @@ class DialogAdd(context: Context) : Dialog(context) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                     progressBar.visibility = View.GONE;
+
                 }
             }
         }
     }
-
 }

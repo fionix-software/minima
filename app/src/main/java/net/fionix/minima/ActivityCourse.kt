@@ -22,6 +22,8 @@ import net.fionix.minima.util.OnCourseItemLongClickListener
 class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
 
     private lateinit var ctx: Context
+    private lateinit var adapterCourse: AdapterCourse
+    private var courseList: ArrayList<ModelCourse> = arrayListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -35,22 +37,48 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
         addButton.setOnClickListener {
             // show add course dialog
             val dialog = DialogAdd(view.context)
+            dialog.setOnCancelListener {
+                updateList()
+            }
             dialog.show()
         }
 
         // course list
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
-        val courseList: ArrayList<ModelCourse> = arrayListOf()
-        val adapterCourse = AdapterCourse(courseList, this)
+        adapterCourse = AdapterCourse(courseList, this)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = adapterCourse
+
+        // update list
+        updateList()
+
+        // return view
+        return view
+    }
+
+    override fun onCourseItemLongClickListener(data: ModelCourse) {
+
+        // check if context is not yet initialize
+        if (!this::ctx.isInitialized) {
+            return
+        }
+
+        // show add course dialog
+        val dialog = DialogEdit(ctx, data)
+        dialog.setOnDismissListener {
+            updateList()
+        }
+        dialog.show()
+    }
+
+    private fun updateList() {
 
         // get course list
         GlobalScope.launch(Dispatchers.IO) {
 
             // parse cursor
             val tempCourseList: ArrayList<ModelCourse> = arrayListOf()
-            val cursor: Cursor = DatabaseMain.getDatabase(view.context).timetableDao().getCourseList()
+            val cursor: Cursor = DatabaseMain.getDatabase(ctx).timetableDao().getCourseList()
             cursor.use { c ->
                 while (c.moveToNext()) {
                     // column 0: course code
@@ -69,20 +97,5 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
                 adapterCourse.notifyDataSetChanged()
             }
         }
-
-        // return view
-        return view
-    }
-
-    override fun onCourseItemLongClickListener(data: ModelCourse) {
-
-        // check if context is not yet initialize
-        if (!this::ctx.isInitialized) {
-            return
-        }
-
-        // show add course dialog
-        val dialog = DialogEdit(this.ctx, data)
-        dialog.show()
     }
 }
