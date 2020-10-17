@@ -1,7 +1,6 @@
 package net.fionix.minima.util
 
 import net.fionix.minima.model.EntityTimetable
-import net.fionix.minima.model.ModelCourse
 import net.fionix.minima.model.ModelFaculty
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
@@ -20,11 +19,11 @@ class ScraperICress {
         fun retrieveFacultyList(): ArrayList<ModelFaculty> {
 
             // retrieve page
-            var doc: Document?
+            val doc: Document?
             try {
                 doc = Jsoup.connect(facultyScrapableLink).timeout(timeoutInMillis).get()
             } catch (e: IOException) {
-                return arrayListOf<ModelFaculty>()
+                return arrayListOf()
             }
 
             // parse faculty list
@@ -60,9 +59,15 @@ class ScraperICress {
                 for (table in doc.select("table")) {
                     for (row in table.select("tr")) {
                         val tds = row.select("td")
+                        // tds[0]: group
+                        // tds[1]: start
+                        // tds[2]: end
+                        // tds[3]: day
+                        // tds[4]: mode
+                        // tds[5]: status
+                        // tds[6]: room
                         if (tds[0].text().toLowerCase(Locale.getDefault()).contains(courseGroup.toLowerCase(Locale.getDefault()))) {
-                            val course: ModelCourse = ModelCourse(courseCode, courseGroup, faculty.facultyCode, faculty.facultyName)
-                            arrayList.add(EntityTimetable(0, courseCode, courseGroup, faculty.facultyCode, faculty.facultyName, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
+                            arrayList.add(EntityTimetable(0, courseCode, "", courseGroup, faculty.facultyCode, faculty.facultyName, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
                         }
                     }
                 }

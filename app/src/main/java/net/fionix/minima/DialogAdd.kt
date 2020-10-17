@@ -42,7 +42,7 @@ class DialogAdd(context: Context) : Dialog(context) {
         val courseGroupEditText: EditText = findViewById(R.id.editText2)
 
         // add button
-        val addButton: Button = findViewById(R.id.button1)
+        val addButton: Button = findViewById(R.id.addButton)
         addButton.setOnClickListener {
 
             // get input

@@ -13,10 +13,16 @@ interface DaoTimetable {
     @Query("SELECT * FROM EntityTimetable")
     fun getList(): List<EntityTimetable>
 
-    @Query("SELECT DISTINCT courseCode, courseGroup, facultyCode, facultyName FROM EntityTimetable")
+    @Query("SELECT DISTINCT courseCode, courseName, courseGroup, facultyCode, facultyName FROM EntityTimetable")
     fun getCourseList(): Cursor
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(timetable: EntityTimetable)
+
+    @Query("UPDATE EntityTimetable SET courseName=:courseName WHERE courseCode=:courseCode AND courseGroup=:courseGroup AND facultyCode=:facultyCode AND facultyName=:facultyName")
+    suspend fun updateName(courseCode: String, courseName: String, courseGroup: String, facultyCode: String, facultyName: String)
+
+    @Query("DELETE FROM EntityTimetable WHERE courseCode=:courseCode AND courseName=:courseName AND courseGroup=:courseGroup AND facultyCode=:facultyCode AND facultyName=:facultyName")
+    suspend fun deleteByCourse(courseCode: String, courseName: String, courseGroup: String, facultyCode: String, facultyName: String)
 
 }

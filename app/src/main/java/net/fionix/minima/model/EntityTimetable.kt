@@ -11,6 +11,8 @@ data class EntityTimetable(
         @ColumnInfo
         override val courseCode: String,
         @ColumnInfo
+        override val courseName: String,
+        @ColumnInfo
         override val courseGroup: String,
         @ColumnInfo
         override val facultyCode: String,
