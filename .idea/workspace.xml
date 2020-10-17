@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="++" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -19,25 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91e51a0-d072-48bb-b116-ed6ac4f35984" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/adapter/AdapterTimetable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/OnTimetableItemLongClickListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_three_line.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilDataFixer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilSharedPref.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetable.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/DialogAdd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/DialogAdd.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/DialogEdit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/DialogEdit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/adapter/AdapterCourse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/adapter/AdapterCourse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/database/DaoTimetable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/database/DaoTimetable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/CourseItemOnClickListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/OnCourseItemLongClickListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ScraperICress.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ScraperICress.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_timetable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_timetable.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listview_course.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listview_timetable.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/EntityTimetable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/model/EntityTimetable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ClassMinima.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ClassMinima.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ScraperICress.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilScraper.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +57,9 @@
       <list>
         <option value="resourceFile" />
         <option value="Kotlin Script" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
-        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -280,26 +271,30 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602772276138" />
-    <state width="1884" height="213" key="GridCell.Tab.0.bottom" timestamp="1602941813191">
+    <state width="1884" height="284" key="GridCell.Tab.0.bottom" timestamp="1602954375417">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="213" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602941813191" />
-    <state width="1884" height="213" key="GridCell.Tab.0.center" timestamp="1602941813191">
+    <state width="1884" height="284" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602954375417" />
+    <state width="1884" height="284" key="GridCell.Tab.0.center" timestamp="1602954375417">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="213" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602941813191" />
-    <state width="1884" height="213" key="GridCell.Tab.0.left" timestamp="1602941813191">
+    <state width="1884" height="284" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602954375417" />
+    <state width="1884" height="284" key="GridCell.Tab.0.left" timestamp="1602954375417">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="213" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602941813191" />
-    <state width="1884" height="213" key="GridCell.Tab.0.right" timestamp="1602941813191">
+    <state width="1884" height="284" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602954375417" />
+    <state width="1884" height="284" key="GridCell.Tab.0.right" timestamp="1602954375417">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="213" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602941813191" />
+    <state width="1884" height="284" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602954375417" />
     <state x="2260" y="150" width="991" height="661" key="SettingsEditor" timestamp="1602771452119">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2260" y="150" width="991" height="661" key="SettingsEditor/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602771452119" />
+    <state x="2676" y="313" width="405" height="393" key="StructurePopup" timestamp="1602954165422">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2676" y="313" width="405" height="393" key="StructurePopup/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602954165422" />
     <state x="2753" y="323" width="243" height="402" key="refactoring.ChangeSignatureDialog" timestamp="1602900651853">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

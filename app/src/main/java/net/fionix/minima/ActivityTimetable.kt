@@ -22,7 +22,8 @@ import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelCourse
 import net.fionix.minima.model.ModelFaculty
 import net.fionix.minima.util.OnTimetableItemLongClickListener
-import net.fionix.minima.util.ScraperICress
+import net.fionix.minima.util.UtilDataFixer
+import net.fionix.minima.util.UtilScraper
 
 class ActivityTimetable : Fragment(), OnTimetableItemLongClickListener {
 
@@ -84,7 +85,7 @@ class ActivityTimetable : Fragment(), OnTimetableItemLongClickListener {
                 // retrieve timetable from icress
                 val newTimetableList: ArrayList<EntityTimetable> = arrayListOf()
                 for (courseItem in tempCourseList) {
-                    newTimetableList.addAll(ScraperICress.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup))
+                    newTimetableList.addAll(UtilDataFixer.fixTimetable(UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup)))
                 }
 
                 // if failed don't update existing data in database

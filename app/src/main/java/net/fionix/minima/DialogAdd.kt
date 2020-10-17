@@ -16,7 +16,8 @@ import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelFaculty
-import net.fionix.minima.util.ScraperICress
+import net.fionix.minima.util.UtilDataFixer
+import net.fionix.minima.util.UtilScraper
 
 class DialogAdd(context: Context) : Dialog(context) {
 
@@ -57,7 +58,7 @@ class DialogAdd(context: Context) : Dialog(context) {
             GlobalScope.launch(Dispatchers.IO) {
 
                 // retrieve faculty
-                val facultyList: ArrayList<ModelFaculty> = ScraperICress.retrieveFacultyList()
+                val facultyList: ArrayList<ModelFaculty> = UtilScraper.retrieveFacultyList()
                 if (facultyList.isEmpty()) {
                     // notify
                     withContext(Dispatchers.Main) {
@@ -68,7 +69,7 @@ class DialogAdd(context: Context) : Dialog(context) {
                 }
 
                 // retrieve timetable
-                val timetableList: ArrayList<EntityTimetable> = ScraperICress.retrieveTimetable(facultyList, courseCode, courseGroup)
+                val timetableList: ArrayList<EntityTimetable> = UtilDataFixer.fixTimetable(UtilScraper.retrieveTimetable(facultyList, courseCode, courseGroup))
                 if (timetableList.isEmpty()) {
 
                     // notify

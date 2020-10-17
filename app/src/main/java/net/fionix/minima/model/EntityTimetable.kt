@@ -7,23 +7,23 @@ import androidx.room.PrimaryKey
 @Entity
 data class EntityTimetable(
         @PrimaryKey(autoGenerate = true)
-        val timetableId: Int,
+        var timetableId: Int,
         @ColumnInfo
-        override val courseCode: String,
+        override var courseCode: String,
         @ColumnInfo
-        override val courseName: String,
+        override var courseName: String,
         @ColumnInfo
-        override val courseGroup: String,
+        override var courseGroup: String,
         @ColumnInfo
-        override val facultyCode: String,
+        override var facultyCode: String,
         @ColumnInfo
-        override val facultyName: String,
+        override var facultyName: String,
         @ColumnInfo
-        val timetableTimeStart: String,
+        var timetableTimeStart: String,
         @ColumnInfo
-        val timetableTimeEnd: String,
+        var timetableTimeEnd: String,
         @ColumnInfo
-        val timetableDay: String,
+        var timetableDay: String,
         @ColumnInfo
-        val timetableVenue: String,
+        var timetableVenue: String,
 ) : IModelCourse

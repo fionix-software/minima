@@ -8,7 +8,7 @@ import java.io.IOException
 import java.util.*
 import kotlin.math.min
 
-class ScraperICress {
+class UtilScraper {
 
     companion object {
 
@@ -31,7 +31,7 @@ class ScraperICress {
             if (doc != null) {
                 val list = doc.select("option")
                 for (item in list) {
-                    val temp: String = item.html().toString().replace(" \\[".toRegex(), ", ").replace(" &amp; ".toRegex(), " ").replace("\\(".toRegex(), "").replace("\\)".toRegex(), "").toUpperCase(Locale.getDefault())
+                    val temp: String = item.html().toString().trim().replace(" \\[".toRegex(), ", ").replace(" &amp; ".toRegex(), " ").replace("\\(".toRegex(), "").replace("\\)".toRegex(), "").toUpperCase(Locale.getDefault())
                     arrayList.add(ModelFaculty(temp.substring(0, min(temp.length, 2)), temp.substring(3, temp.length)))
                 }
             }
@@ -67,7 +67,7 @@ class ScraperICress {
                         // tds[5]: status
                         // tds[6]: room
                         if (tds[0].text().toLowerCase(Locale.getDefault()).contains(courseGroup.toLowerCase(Locale.getDefault()))) {
-                            arrayList.add(EntityTimetable(0, courseCode.toUpperCase(Locale.getDefault()), "", courseGroup.toUpperCase(Locale.getDefault()), faculty.facultyCode, faculty.facultyName, tds[1].text(), tds[2].text(), tds[3].text(), tds[6].text()))
+                            arrayList.add(EntityTimetable(0, courseCode.toUpperCase(Locale.getDefault()), "", courseGroup.toUpperCase(Locale.getDefault()), faculty.facultyCode, faculty.facultyName, tds[1].text().toString().trim().toUpperCase(Locale.getDefault()), tds[2].text().toString().trim().toUpperCase(Locale.getDefault()), tds[3].text().toString().trim().toUpperCase(Locale.getDefault()), tds[6].text().toString().trim().toUpperCase(Locale.getDefault())))
                         }
                     }
                 }
