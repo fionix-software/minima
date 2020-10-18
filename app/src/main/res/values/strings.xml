@@ -2,6 +2,7 @@
 
     <!-- app -->
     <string name="app_name">Minima</string>
+    <string name="app_version">Minima %v</string>
     <string name="title_course">Course</string>
     <string name="title_timetable">Timetable</string>
     <string name="title_setting">Setting</string>
@@ -27,5 +28,20 @@
     <string name="delete">Delete</string>
     <string name="not_available">n/a</string>
     <string name="refresh">Refresh</string>
+
+    <!-- email -->
+    <string name="email_text">
+        Title: Short brief of your feedback.\n\n
+        Description: Your full feedback.\n\n
+        Steps to reproduce (for report issue only): Clearly and chronologically (numbered list is recommended).\n\n
+        Expectation (for report issue only): How would you think it should behave / work.\n\n
+        Platform Info (for report issue only): Device full model (e.g. Google Pixel 4, Huawei Honor 8x, etc.).
+    </string>
+
+    <!-- shortcut -->
+    <string name="shortcut_icress_short">iCress</string>
+    <string name="shortcut_icress_long">Open iCress in browser</string>
+    <string name="shortcut_student_portal_short">Student portal</string>
+    <string name="shortcut_student_portal_long">Open Simsweb UiTM in browser</string>
 
 </resources>

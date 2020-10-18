@@ -19,41 +19,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91e51a0-d072-48bb-b116-ed6ac4f35984" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetableTable.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/OnButtonClickConfirmClearDataAlertDialog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/OnButtonClickDismissAlertDialog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bookmark_solid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cog_solid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_list_alt_regular.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sync_alt_solid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_table_solid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_external_link_square_alt_solid.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityMain.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTable.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetableList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ClassMinima.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilHtmlTimetableGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_code_branch.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_github.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_handshake.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_link.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_list.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_playlist.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_refresh.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_smile_wink.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_user_graduate.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_timetable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_timetable.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_table_timetable.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/widget_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/widget_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySplash.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySplash.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/activity_settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +37,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[GBT4C18B14004761]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_29]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -80,11 +53,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="Kotlin Script" />
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -106,8 +79,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="GBT4C18B14004761" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-10-12T06:18:29.801Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-18T14:08:27.143Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\Nazeb Zurati\Desktop\Works\minima\app" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.Flavors" value="" />
@@ -383,26 +356,30 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2691" y="323" width="618" height="397" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602988980340" />
-    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl" timestamp="1602996447661">
+    <state x="2632" y="298" width="818" height="477" key="AndroidCreateResourceFileDialog" timestamp="1603030619893">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602996447661" />
-    <state width="1884" height="318" key="GridCell.Tab.0.bottom" timestamp="1603005307234">
+    <state x="2632" y="298" width="818" height="477" key="AndroidCreateResourceFileDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603030619893" />
+    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl" timestamp="1603032201986">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
-    <state width="1884" height="318" key="GridCell.Tab.0.center" timestamp="1603005307234">
+    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603032201986" />
+    <state width="1884" height="350" key="GridCell.Tab.0.bottom" timestamp="1603007479161">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
-    <state width="1884" height="318" key="GridCell.Tab.0.left" timestamp="1603005307234">
+    <state width="1884" height="350" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
+    <state width="1884" height="350" key="GridCell.Tab.0.center" timestamp="1603007479161">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
-    <state width="1884" height="318" key="GridCell.Tab.0.right" timestamp="1603005307234">
+    <state width="1884" height="350" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
+    <state width="1884" height="350" key="GridCell.Tab.0.left" timestamp="1603007479161">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
+    <state width="1884" height="350" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
+    <state width="1884" height="350" key="GridCell.Tab.0.right" timestamp="1603007479161">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1884" height="350" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
     <state x="2566" y="326" width="618" height="396" key="IDE.errors.dialog" timestamp="1603007373050">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

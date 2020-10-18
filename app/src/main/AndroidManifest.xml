@@ -15,7 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ActivitySplash"
             android:label="@string/app_name"
@@ -23,39 +22,23 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter android:label="@string/action_view">
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="www.fionix.net"
-                    android:pathPrefix="/minima"
-                    android:scheme="https" />
             </intent-filter>
+
         </activity>
-
         <receiver android:name=".widget.WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/info_widget" />
         </receiver>
-
         <service
             android:name=".widget.WidgetService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
-
-        <activity android:name=".ActivityTimetableTable" />
-
         <activity android:name=".ActivityMain" />
-
     </application>
 
 </manifest>

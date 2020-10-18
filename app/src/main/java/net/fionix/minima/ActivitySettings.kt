@@ -50,11 +50,12 @@ class ActivitySettings : PreferenceFragmentCompat() {
             true
         }
 
-        // open github repo with browser
+        // open email and use email template
         preferenceManager.findPreference<Preference>("preference_email")?.setOnPreferenceClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("nazeb04@gmail.com"))
             intent.putExtra(Intent.EXTRA_SUBJECT, "[Minima] Hi! I've my feedback for you")
+            intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text))
             intent.type = "message/rfc822"
             startActivity(Intent.createChooser(intent, "Send feedback via: "));
             true
@@ -68,7 +69,8 @@ class ActivitySettings : PreferenceFragmentCompat() {
             true
         }
 
-        // open github repo with browser
+        // open fionix page with browser
+        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("%v", "v" + BuildConfig.VERSION_NAME)
         preferenceManager.findPreference<Preference>("preference_version")?.setOnPreferenceClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(fionixPageLink)
