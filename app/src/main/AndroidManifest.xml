@@ -52,7 +52,7 @@
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
-        <activity android:name=".ActivityTable" />
+        <activity android:name=".ActivityTimetableTable" />
 
         <activity android:name=".ActivityMain" />
 

@@ -30,7 +30,6 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
         // inflate view
         val view = inflater.inflate(R.layout.activity_list_course, container, false)
         this.ctx = view.context
-        // prefs = PreferenceManager.getDefaultSharedPreferences(context)
 
         // add button
         val addButton: Button = view.findViewById(R.id.button)

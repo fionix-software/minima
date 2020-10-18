@@ -19,18 +19,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91e51a0-d072-48bb-b116-ed6ac4f35984" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.attach_pid20438" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/net/fionix/minima/DatabaseUnitTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/test/TestData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/net/fionix/minima/DataFixerTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetableTable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/OnButtonClickConfirmClearDataAlertDialog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/OnButtonClickDismissAlertDialog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bookmark_solid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cog_solid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_list_alt_regular.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sync_alt_solid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_table_solid.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/net/fionix/minima/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilDataFixer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilDataFixer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/net/fionix/minima/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityCourse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityMain.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTable.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivityTimetableList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/ClassMinima.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/util/UtilHtmlTimetableGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_code_branch.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_github.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_handshake.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_link.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_playlist.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_refresh.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_smile_wink.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_user_graduate.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_course.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_timetable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_timetable.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_table_timetable.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/widget_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/widget_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/activity_settings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +64,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_29]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[GBT4C18B14004761]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -114,7 +137,7 @@
       <recent name="net.fionix.minima.adapter" />
     </key>
   </component>
-  <component name="RunManager" selected="Android JUnit.All in minima">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -336,10 +359,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2342" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602991411914" />
-    <state x="2709" y="305" width="342" height="438" key="#com.intellij.ide.util.MemberChooser" timestamp="1602942579338">
+    <state x="2709" y="305" width="342" height="438" key="#com.intellij.ide.util.MemberChooser" timestamp="1603004734179">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2709" y="305" width="342" height="438" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602942579338" />
+    <state x="2709" y="305" width="342" height="438" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603004734179" />
     <state x="2678" y="348" width="393" height="351" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1602991409376">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -360,26 +383,30 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2691" y="323" width="618" height="397" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602988980340" />
-    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl" timestamp="1602991377285">
+    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl" timestamp="1602996447661">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602991377285" />
-    <state width="1884" height="318" key="GridCell.Tab.0.bottom" timestamp="1602993345098">
+    <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602996447661" />
+    <state width="1884" height="318" key="GridCell.Tab.0.bottom" timestamp="1603005307234">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602993345098" />
-    <state width="1884" height="318" key="GridCell.Tab.0.center" timestamp="1602993345098">
+    <state width="1884" height="318" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
+    <state width="1884" height="318" key="GridCell.Tab.0.center" timestamp="1603005307234">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602993345098" />
-    <state width="1884" height="318" key="GridCell.Tab.0.left" timestamp="1602993345098">
+    <state width="1884" height="318" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
+    <state width="1884" height="318" key="GridCell.Tab.0.left" timestamp="1603005307234">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602993345098" />
-    <state width="1884" height="318" key="GridCell.Tab.0.right" timestamp="1602993345098">
+    <state width="1884" height="318" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
+    <state width="1884" height="318" key="GridCell.Tab.0.right" timestamp="1603005307234">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="318" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602993345098" />
+    <state width="1884" height="318" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603005307234" />
+    <state x="2566" y="326" width="618" height="396" key="IDE.errors.dialog" timestamp="1603007373050">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2566" y="326" width="618" height="396" key="IDE.errors.dialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007373050" />
     <state x="2260" y="150" width="991" height="661" key="SettingsEditor" timestamp="1602771452119">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -392,10 +419,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2369" y="136" width="487" height="714" key="find.popup/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602990149150" />
-    <state x="2753" y="323" width="243" height="402" key="refactoring.ChangeSignatureDialog" timestamp="1602900651853">
+    <state x="2753" y="323" width="243" height="402" key="refactoring.ChangeSignatureDialog" timestamp="1602999482510">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2753" y="323" width="243" height="402" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602900651853" />
+    <state x="2753" y="323" width="243" height="402" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602999482510" />
     <state x="2626" y="236" width="505" height="399" key="search.everywhere.popup" timestamp="1602987127655">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

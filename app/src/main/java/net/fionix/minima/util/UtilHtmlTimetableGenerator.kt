@@ -1,6 +1,6 @@
 package net.fionix.minima.util
 
-object ClassMinima {
+object UtilHtmlTimetableGenerator {
 
     //
     // fun generateTable(day: String, arrayListTimetable: ArrayList<ClassTimetable?>?): String? {

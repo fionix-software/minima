@@ -25,7 +25,7 @@ import net.fionix.minima.util.OnTimetableItemLongClickListener
 import net.fionix.minima.util.UtilDataFixer
 import net.fionix.minima.util.UtilScraper
 
-class ActivityTimetable : Fragment(), OnTimetableItemLongClickListener {
+class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
     private lateinit var ctx: Context
     private lateinit var adapterTimetable: AdapterTimetable

@@ -23,7 +23,11 @@ class ActivityMain : AppCompatActivity() {
                 }
                 R.id.navigation_list -> {
                     supportActionBar!!.title = "Timetable List"
-                    supportFragmentManager.beginTransaction().replace(R.id.content, ActivityTimetable()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.content, ActivityTimetableList()).commit()
+                }
+                R.id.navigation_table -> {
+                    supportActionBar!!.title = "Timetable table"
+                    supportFragmentManager.beginTransaction().replace(R.id.content, ActivityTimetableTable()).commit()
                 }
                 R.id.navigation_setting -> {
                     supportActionBar!!.title = "Settings"
