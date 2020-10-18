@@ -19,14 +19,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91e51a0-d072-48bb-b116-ed6ac4f35984" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_external_link_square_alt_solid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/widget/WidgetReceiver.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_three_line_linear.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_descriptor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/config_network_security.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySplash.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/ActivitySplash.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/widget/WidgetFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/widget/WidgetFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/fionix/minima/widget/WidgetProvider.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sync_alt_solid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sync_alt_solid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listview_widget.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/widget_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/widget_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/info_widget.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/widget_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +88,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-18T14:08:27.143Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-18T15:29:20.923Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\Nazeb Zurati\Desktop\Works\minima\app" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.Flavors" value="" />
@@ -90,7 +98,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="device.picker.selection" value="YT9110XLKZ" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -108,6 +116,9 @@
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="net.fionix.minima.util" />
       <recent name="net.fionix.minima.adapter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -356,30 +367,30 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2691" y="323" width="618" height="397" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1602988980340" />
-    <state x="2632" y="298" width="818" height="477" key="AndroidCreateResourceFileDialog" timestamp="1603030619893">
+    <state x="2632" y="298" width="818" height="477" key="AndroidCreateResourceFileDialog" timestamp="1603035807879">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2632" y="298" width="818" height="477" key="AndroidCreateResourceFileDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603030619893" />
+    <state x="2632" y="298" width="818" height="477" key="AndroidCreateResourceFileDialog/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603035807879" />
     <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl" timestamp="1603032201986">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2454" y="306" width="318" height="377" key="FileChooserDialogImpl/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603032201986" />
-    <state width="1884" height="350" key="GridCell.Tab.0.bottom" timestamp="1603007479161">
+    <state width="1884" height="213" key="GridCell.Tab.0.bottom" timestamp="1603039665272">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="350" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
-    <state width="1884" height="350" key="GridCell.Tab.0.center" timestamp="1603007479161">
+    <state width="1884" height="213" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603039665272" />
+    <state width="1884" height="213" key="GridCell.Tab.0.center" timestamp="1603039665272">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="350" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
-    <state width="1884" height="350" key="GridCell.Tab.0.left" timestamp="1603007479161">
+    <state width="1884" height="213" key="GridCell.Tab.0.center/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603039665272" />
+    <state width="1884" height="213" key="GridCell.Tab.0.left" timestamp="1603039665272">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="350" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
-    <state width="1884" height="350" key="GridCell.Tab.0.right" timestamp="1603007479161">
+    <state width="1884" height="213" key="GridCell.Tab.0.left/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603039665272" />
+    <state width="1884" height="213" key="GridCell.Tab.0.right" timestamp="1603039665272">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1884" height="350" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603007479161" />
+    <state width="1884" height="213" key="GridCell.Tab.0.right/1920.0.1920.1080/0.414.1920.1080@1920.0.1920.1080" timestamp="1603039665272" />
     <state x="2566" y="326" width="618" height="396" key="IDE.errors.dialog" timestamp="1603007373050">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
