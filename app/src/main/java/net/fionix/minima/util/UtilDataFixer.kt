@@ -33,10 +33,10 @@ class UtilDataFixer {
 
                 // fix XX:15 time represent as XX:5
                 if (tempTimetable.timetableTimeStart.contains(":5 ")) {
-                    tempTimetable.timetableTimeStart.replace(":5 ", ":15 ")
+                    tempTimetable.timetableTimeStart = tempTimetable.timetableTimeStart.replace(":5 ", ":15 ")
                 }
                 if (tempTimetable.timetableTimeEnd.contains(":5 ")) {
-                    tempTimetable.timetableTimeEnd.replace(":5 ", ":15 ")
+                    tempTimetable.timetableTimeEnd = tempTimetable.timetableTimeEnd.replace(":5 ", ":15 ")
                 }
 
                 // fix MA campus
@@ -50,12 +50,16 @@ class UtilDataFixer {
                 }
 
                 // fix faculty name case
-                tempTimetable.facultyName = tempTimetable.facultyName.toLowerCase(Locale.getDefault())
+                tempTimetable.facultyName = tempTimetable.facultyName.toLowerCase(Locale.getDefault()).replace("  ", " ")
                 val tempFacultyNameList = ArrayList(tempTimetable.facultyName.split(' '))
                 for (index in tempFacultyNameList.indices) {
+
+                    // trim string
+                    tempFacultyNameList[index].trim()
+
                     // fix partial upper case
                     if (tempFacultyNameList[index].contains("uitm")) {
-                        tempFacultyNameList[index].replace("uitm", "UiTM")
+                        tempFacultyNameList[index] = tempFacultyNameList[index].replace("uitm", "UiTM")
                     }
                     else if (tempFacultyNameList[index] == "n." || tempFacultyNameList[index] == "hep" || (tempFacultyNameList[index][0] == '[' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ']') || (tempFacultyNameList[index][0] == '(' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ')')) {
                         tempFacultyNameList[index] = tempFacultyNameList[index].toUpperCase(Locale.getDefault())
