@@ -2,10 +2,10 @@ name: Native CI
 
 on:
   push:
-    branches: [ feature/refactor-to-kotlin ]
+    branches: [ native, feature/refactor-to-kotlin ]
     
   pull_request:
-    branches: [ feature/refactor-to-kotlin ]
+    branches: [ native, feature/refactor-to-kotlin ]
 
 jobs:
   build:
