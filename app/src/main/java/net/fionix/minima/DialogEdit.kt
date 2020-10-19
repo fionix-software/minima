@@ -2,7 +2,6 @@ package net.fionix.minima
 
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
@@ -30,6 +29,9 @@ class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
 
         // edit text
         val courseNameEditText: EditText = findViewById(R.id.editText1)
+        if (data.courseName.isNotEmpty()) {
+            courseNameEditText.setText(data.courseName)
+        }
 
         // save button
         val saveButton: Button = findViewById(R.id.saveButton)
@@ -46,7 +48,7 @@ class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
             GlobalScope.launch(Dispatchers.IO) {
 
                 // update course name
-                DatabaseMain.getDatabase(context).timetableDao().updateName(data.courseCode, courseName, data.courseGroup, data.facultyCode, data.facultyName)
+                DatabaseMain.getDatabase(context).timetableDao().updateCourseName(courseName, data.courseCode, data.courseName, data.facultyCode)
 
                 // close dialog
                 withContext(Dispatchers.Main) {

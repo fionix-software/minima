@@ -84,8 +84,20 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
                 // retrieve timetable from icress
                 val newTimetableList: ArrayList<EntityTimetable> = arrayListOf()
+                val newCourseList: ArrayList<ModelCourse> = arrayListOf()
                 for (courseItem in tempCourseList) {
-                    newTimetableList.addAll(UtilDataFixer.fixTimetable(UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup)))
+
+                    // retrieve timetable
+                    val retrievedTimetableList = UtilDataFixer.fixTimetable(UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup))
+                    newTimetableList.addAll(retrievedTimetableList)
+
+                    // parse course
+                    for (retrievedItem in retrievedTimetableList) {
+                        val course = ModelCourse(retrievedItem.courseCode, retrievedItem.courseName, retrievedItem.courseGroup, retrievedItem.facultyCode, retrievedItem.facultyName)
+                        if (course !in newCourseList) {
+                            newCourseList.add(course)
+                        }
+                    }
                 }
 
                 // if failed don't update existing data in database
@@ -98,6 +110,7 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
                     }
 
+                    // return
                     return@launch
                 }
 
@@ -108,15 +121,15 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
                 }
 
                 // update course name (use the previously set)
-                for (courseItem in tempCourseList) {
-                    DatabaseMain.getDatabase(ctx).timetableDao().updateName(courseItem.courseCode, courseItem.courseName, courseItem.courseGroup, courseItem.facultyCode, courseItem.facultyName)
+                for (courseItem in newCourseList) {
+                    val previouslySetCourseName = tempCourseList.filter { c -> c.courseCode == courseItem.courseCode }[0].courseName
+                    DatabaseMain.getDatabase(ctx).timetableDao().updateCourseName(previouslySetCourseName, courseItem.courseCode, courseItem.courseName, courseItem.facultyCode)
                 }
 
                 // notify
                 withContext(Dispatchers.Main) {
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                     progressBar.visibility = View.GONE;
-
                 }
             }
 

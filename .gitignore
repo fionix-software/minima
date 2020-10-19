@@ -14,7 +14,7 @@ gen/
 out/
 
 # Gradle files
-.gradle/
+# .gradle/
 build/
 
 # Local configuration file (sdk path, etc)
@@ -63,3 +63,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# lock file
+*.lock

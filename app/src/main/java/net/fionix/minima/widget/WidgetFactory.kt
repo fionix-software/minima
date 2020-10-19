@@ -11,6 +11,9 @@ import kotlinx.coroutines.launch
 import net.fionix.minima.R
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.EntityTimetable
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class WidgetFactory(var context: Context, intent: Intent) : RemoteViewsFactory {
 
@@ -45,6 +48,9 @@ class WidgetFactory(var context: Context, intent: Intent) : RemoteViewsFactory {
     }
 
     override fun getCount(): Int {
+        if (!this::timetableList.isInitialized) {
+            return 0
+        }
         return timetableList.size
     }
 
@@ -62,8 +68,7 @@ class WidgetFactory(var context: Context, intent: Intent) : RemoteViewsFactory {
 
     override fun onCreate() {
         GlobalScope.launch(Dispatchers.IO) {
-            // todo: get today timetable only
-            timetableList = ArrayList(DatabaseMain.getDatabase(context).timetableDao().getList())
+            timetableList = ArrayList(DatabaseMain.getDatabase(context).timetableDao().getListByDay(SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time)))
         }
     }
 

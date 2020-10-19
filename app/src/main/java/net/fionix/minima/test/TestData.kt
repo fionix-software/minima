@@ -5,8 +5,11 @@ import net.fionix.minima.model.EntityTimetable
 class TestData {
     companion object {
         val databaseDataArray: ArrayList<EntityTimetable> = arrayListOf(
-                EntityTimetable(0, "ECE643", "Fundamentals of Network Security", "EE241C8A", "EE", "Faculty of Electrical Engineering", "8:00 am", "10:00 am", "Monday", "Venue 1"),
-                EntityTimetable(0, "ECE648", "Special Topics in Computer Networking", "EE241C8A", "EE", "Faculty of Electrical Engineering", "8:00 am", "10:00 am", "Monday", "Venue 1"),
+                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Wednesday", "-"),
+                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Monday", "-"),
+                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Friday", "-"),
+                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Friday", "-"),
+                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Tuesday", "-"),
         )
         val fixNoonDataArray: ArrayList<EntityTimetable> = arrayListOf(
                 EntityTimetable(0, "-", "-", "-", "-", "-", "12:00 am", "2:00 pm", "-", "-"),
