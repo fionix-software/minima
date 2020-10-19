@@ -1,3 +1,5 @@
+![Native CI](https://github.com/fionix-software/minima/workflows/Native%20CI/badge.svg)
+
 # Minima
 
 Minima is a minimal cross platform iCress application. Minima name is picked to be an alternative name for Lumos. In Harry Potter series, there is a spell called 'Lumos Maxima' which is the incantation to a charm that can be used to produce a blinding flash of bright white light from the tip of the wand. As an alternative, the Minima is the opposite for Maxima. Why picked the spell? Well, there is an existing iCress application at early time called 'Lumos' which was discontinued.
