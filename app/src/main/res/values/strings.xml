@@ -13,9 +13,14 @@
     <string name="course_add">Add Course</string>
     <string name="course_list">Course List</string>
     <string name="course_faculty">Faculty</string>
-    <string name="course_dialog_course_code">Course Code (Ex: EEE610)</string>
-    <string name="course_dialog_course_name">Course Name</string>
-    <string name="course_dialog_group_code">Group Code (Ex: EE241C7A)</string>
+    <string name="course_dialog_course_code">Course code</string>
+    <string name="course_dialog_course_code_hint">e.g. EEE610</string>
+    <string name="course_dialog_group_code">Group code</string>
+    <string name="course_dialog_group_code_hint">e.g. EE241C7A</string>
+    <string name="course_dialog_course_name">Course name</string>
+    <string name="course_dialog_course_name_hint">e.g. Engineers in society</string>
+    <string name="course_dialog_venue">Venue</string>
+    <string name="course_dialog_venue_hint">e.g. Dewan Kuliah C, FKE</string>
     <string name="course_dialog_extra">The guide can be found in the Setting tab. Please delete any unrelated course by check the course\'s faculty. This process is done automatically. Lowercase letters are acceptable.</string>
 
     <!-- timetable -->

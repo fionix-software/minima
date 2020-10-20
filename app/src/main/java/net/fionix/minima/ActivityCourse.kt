@@ -1,5 +1,6 @@
 package net.fionix.minima
 
+import android.app.AlertDialog
 import android.content.Context
 import android.database.Cursor
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +19,11 @@ import kotlinx.coroutines.withContext
 import net.fionix.minima.adapter.AdapterCourse
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.ModelCourse
+import net.fionix.minima.util.OnButtonClickConfirmDeleteCourseAlertDialog
+import net.fionix.minima.util.OnButtonClickDismissAlertDialog
 import net.fionix.minima.util.OnCourseItemLongClickListener
+import net.fionix.minima.util.UtilData
+
 
 class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
 
@@ -48,6 +54,35 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = adapterCourse
 
+        // course list item swap to delete item
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                // noop
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) {
+
+                // get item index
+                val itemIndex = viewHolder.adapterPosition
+
+                // confirmation dialog
+                val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(view.context)
+                alertDialogBuilder.setTitle("Are you sure to delete ${courseList[itemIndex].courseCode}?")
+                alertDialogBuilder.setMessage("This operation is irreversible.")
+                alertDialogBuilder.setPositiveButton("Yes", OnButtonClickConfirmDeleteCourseAlertDialog(view.context, courseList[itemIndex]) {
+                    updateList()
+                })
+                alertDialogBuilder.setNegativeButton("No", OnButtonClickDismissAlertDialog() {
+                    // without update list on dismiss, the item get missing
+                    updateList()
+                })
+                alertDialogBuilder.show()
+            }
+        })
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+
         // update list
         updateList()
 
@@ -63,7 +98,7 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
         }
 
         // show add course dialog
-        val dialog = DialogEdit(ctx, data)
+        val dialog = DialogEditCourseName(ctx, data)
         dialog.setOnDismissListener {
             updateList()
         }
@@ -76,18 +111,10 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
         GlobalScope.launch(Dispatchers.IO) {
 
             // parse cursor
-            val tempCourseList: ArrayList<ModelCourse> = arrayListOf()
             val cursor: Cursor = DatabaseMain.getDatabase(ctx).timetableDao().getCourseList()
-            cursor.use { c ->
-                while (c.moveToNext()) {
-                    // column 0: course code
-                    // column 1: course name
-                    // column 2: course group
-                    // column 3: faculty code
-                    // column 4: faculty name
-                    tempCourseList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-                }
-            }
+            val tempCourseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor)
+
+            // update course list
             courseList.clear()
             courseList.addAll(tempCourseList)
 

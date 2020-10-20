@@ -29,7 +29,9 @@ class ActivitySettings : PreferenceFragmentCompat() {
             alertDialogBuilder.setTitle("Are you sure to clear data?")
             alertDialogBuilder.setMessage("This operation is irreversible.")
             alertDialogBuilder.setPositiveButton("Yes", OnButtonClickConfirmClearDataAlertDialog(preferenceManager.context))
-            alertDialogBuilder.setPositiveButton("No", OnButtonClickDismissAlertDialog())
+            alertDialogBuilder.setNegativeButton("No", OnButtonClickDismissAlertDialog {
+                // noop
+            })
             alertDialogBuilder.show()
             true
         }

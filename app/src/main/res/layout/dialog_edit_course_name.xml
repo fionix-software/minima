@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="14dp">
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:labelFor="@id/editText1"
         android:text="@string/course_dialog_course_name" />
 
     <EditText
@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/course_dialog_course_name_hint"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         tools:targetApi="o" />
@@ -25,26 +26,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:gravity="end"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/saveButton"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/save"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/colorAccent" />
 
-        <Button
-            android:id="@+id/deleteButton"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:text="@string/delete"
-            android:textColor="@android:color/white" />
     </LinearLayout>
 </LinearLayout>

@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelFaculty
-import net.fionix.minima.util.UtilDataFixer
+import net.fionix.minima.util.UtilData
 import net.fionix.minima.util.UtilScraper
 
 class DialogAdd(context: Context) : Dialog(context) {
@@ -48,6 +48,7 @@ class DialogAdd(context: Context) : Dialog(context) {
             val courseCode: String = courseCodeEditText.text.toString().trim()
             val courseGroup: String = courseGroupEditText.text.toString().trim()
             if (courseCode.isEmpty() || courseGroup.isEmpty()) {
+                Toast.makeText(context, "Invalid course information", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -69,7 +70,7 @@ class DialogAdd(context: Context) : Dialog(context) {
                 }
 
                 // retrieve timetable
-                val timetableList: ArrayList<EntityTimetable> = UtilDataFixer.fixTimetable(UtilScraper.retrieveTimetable(facultyList, courseCode, courseGroup))
+                val timetableList: ArrayList<EntityTimetable> = UtilData.fixTimetable(UtilScraper.retrieveTimetable(facultyList, courseCode, courseGroup))
                 if (timetableList.isEmpty()) {
 
                     // notify
@@ -89,7 +90,6 @@ class DialogAdd(context: Context) : Dialog(context) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                     progressBar.visibility = View.GONE;
-
                 }
             }
         }

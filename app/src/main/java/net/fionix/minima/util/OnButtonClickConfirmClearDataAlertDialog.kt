@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
 
-class OnButtonClickConfirmClearDataAlertDialog(val ctx: Context) : DialogInterface.OnClickListener {
+class OnButtonClickConfirmClearDataAlertDialog(val context: Context) : DialogInterface.OnClickListener {
 
     override fun onClick(p0: DialogInterface?, p1: Int) {
 
@@ -16,7 +16,7 @@ class OnButtonClickConfirmClearDataAlertDialog(val ctx: Context) : DialogInterfa
         GlobalScope.launch(Dispatchers.IO) {
 
             // parse cursor
-            DatabaseMain.getDatabase(ctx).timetableDao().clearData()
+            DatabaseMain.getDatabase(context).timetableDao().clearData()
 
             // update
             withContext(Dispatchers.Main) {

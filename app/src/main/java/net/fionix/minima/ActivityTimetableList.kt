@@ -22,7 +22,7 @@ import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelCourse
 import net.fionix.minima.model.ModelFaculty
 import net.fionix.minima.util.OnTimetableItemLongClickListener
-import net.fionix.minima.util.UtilDataFixer
+import net.fionix.minima.util.UtilData
 import net.fionix.minima.util.UtilScraper
 
 class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
@@ -52,18 +52,8 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
             GlobalScope.launch(Dispatchers.IO) {
 
                 // parse cursor
-                val courseListFromDatabase: ArrayList<ModelCourse> = arrayListOf()
                 val cursor: Cursor = DatabaseMain.getDatabase(ctx).timetableDao().getCourseList()
-                cursor.use { c ->
-                    while (c.moveToNext()) {
-                        // column 0: course code
-                        // column 1: course name
-                        // column 2: course group
-                        // column 3: faculty code
-                        // column 4: faculty name
-                        courseListFromDatabase.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-                    }
-                }
+                val courseListFromDatabase: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor)
 
                 // add faculty if not exist
                 val tempFacultyList: ArrayList<ModelFaculty> = arrayListOf()
@@ -88,7 +78,7 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
                 for (courseItem in tempCourseList) {
 
                     // retrieve timetable
-                    val retrievedTimetableList = UtilDataFixer.fixTimetable(UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup))
+                    val retrievedTimetableList = UtilData.fixTimetable(UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup))
                     newTimetableList.addAll(retrievedTimetableList)
 
                     // parse course
@@ -130,11 +120,11 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                     progressBar.visibility = View.GONE;
+
+                    // update list
+                    updateList()
                 }
             }
-
-            // update list
-            updateList()
         }
 
         // timetable list
@@ -151,7 +141,18 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
     }
 
     override fun onTimetableItemLongClickListener(data: EntityTimetable) {
-        // noop
+
+        // check if context is not yet initialize
+        if (!this::ctx.isInitialized) {
+            return
+        }
+
+        // show add course dialog
+        val dialog = DialogEditVenue(ctx, data)
+        dialog.setOnDismissListener {
+            updateList()
+        }
+        dialog.show()
     }
 
     private fun updateList() {

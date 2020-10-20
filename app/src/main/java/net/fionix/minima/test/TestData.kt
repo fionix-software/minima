@@ -5,11 +5,11 @@ import net.fionix.minima.model.EntityTimetable
 class TestData {
     companion object {
         val databaseDataArray: ArrayList<EntityTimetable> = arrayListOf(
-                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Wednesday", "-"),
-                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Monday", "-"),
-                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Friday", "-"),
-                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Friday", "-"),
-                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Tuesday", "-"),
+                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Wednesday", "Venue 1"),
+                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Monday", "Venue 1"),
+                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Friday", "Venue 2"),
+                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Friday", "Venue 1"),
+                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Tuesday", "Venue 3"),
         )
         val fixNoonDataArray: ArrayList<EntityTimetable> = arrayListOf(
                 EntityTimetable(0, "-", "-", "-", "-", "-", "12:00 am", "2:00 pm", "-", "-"),
@@ -34,6 +34,12 @@ class TestData {
                 EntityTimetable(0, "-", "-", "-", "SP", "Kampus Kedah", "-", "-", "-", "-"),
                 EntityTimetable(0, "-", "-", "-", "SI", "KAMPUS PERAK", "-", "-", "-", "-"),
                 EntityTimetable(0, "-", "-", "-", "PB", "Kampus Shah Alam - Akademi Pengajian Bahasa", "-", "-", "-", "-"),
+        )
+        val fixDayCaseDataArray: ArrayList<EntityTimetable> = arrayListOf(
+                EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "Thursday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "ThurSday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "THURSDAY", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "thursday", "-"),
         )
     }
 }

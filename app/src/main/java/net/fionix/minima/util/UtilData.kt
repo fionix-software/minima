@@ -1,10 +1,12 @@
 package net.fionix.minima.util
 
+import android.database.Cursor
 import net.fionix.minima.model.EntityTimetable
+import net.fionix.minima.model.ModelCourse
 import java.util.*
 import kotlin.collections.ArrayList
 
-class UtilDataFixer {
+class UtilData {
 
     companion object {
 
@@ -49,6 +51,9 @@ class UtilDataFixer {
                     tempTimetable.facultyName = "kampus " + tempTimetable.facultyName
                 }
 
+                // fix day case
+                tempTimetable.timetableDay = tempTimetable.timetableDay.toLowerCase(Locale.getDefault()).capitalize(Locale.getDefault())
+
                 // fix faculty name case
                 tempTimetable.facultyName = tempTimetable.facultyName.toLowerCase(Locale.getDefault()).replace("  ", " ")
                 val tempFacultyNameList = ArrayList(tempTimetable.facultyName.split(' '))
@@ -73,6 +78,21 @@ class UtilDataFixer {
 
             // return
             return ArrayList(tempTimetableList)
+        }
+
+        fun cursorToCourseList(cursor: Cursor): ArrayList<ModelCourse> {
+            val arrayList: ArrayList<ModelCourse> = arrayListOf()
+            cursor.use { c ->
+                while (c.moveToNext()) {
+                    // column 0: course code
+                    // column 1: course name
+                    // column 2: course group
+                    // column 3: faculty code
+                    // column 4: faculty name
+                    arrayList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
+                }
+            }
+            return arrayList
         }
     }
 }

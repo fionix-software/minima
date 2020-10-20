@@ -7,8 +7,10 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import net.fionix.minima.database.DaoTimetable
 import net.fionix.minima.database.DatabaseMain
+import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelCourse
 import net.fionix.minima.test.TestData
+import net.fionix.minima.util.UtilData
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -72,17 +74,7 @@ class DatabaseUnitTest {
         }
         assert(daoTimetable.getList().size == 5)
         val cursor: Cursor = daoTimetable.getCourseList()
-        val courseList: ArrayList<ModelCourse> = arrayListOf()
-        cursor.use { c ->
-            while (c.moveToNext()) {
-                // column 0: course code
-                // column 1: course name
-                // column 2: course group
-                // column 3: faculty code
-                // column 4: faculty name
-                courseList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-            }
-        }
+        val courseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor)
         assert(courseList.size == 2)
         assert(courseList[0].courseName == "AAA")
         assert(courseList[1].courseName == "BBB")
@@ -97,17 +89,7 @@ class DatabaseUnitTest {
         }
         assert(daoTimetable.getList().size == 5)
         val cursor1: Cursor = daoTimetable.getCourseList()
-        val courseList: ArrayList<ModelCourse> = arrayListOf()
-        cursor1.use { c ->
-            while (c.moveToNext()) {
-                // column 0: course code
-                // column 1: course name
-                // column 2: course group
-                // column 3: faculty code
-                // column 4: faculty name
-                courseList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-            }
-        }
+        val courseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor1)
         assert(courseList.size == 2)
         assert(courseList[0].courseName == "AAA")
         assert(courseList[1].courseName == "BBB")
@@ -115,16 +97,7 @@ class DatabaseUnitTest {
         courseList.clear()
         assert(courseList.size == 0)
         val cursor2: Cursor = daoTimetable.getCourseList()
-        cursor2.use { c ->
-            while (c.moveToNext()) {
-                // column 0: course code
-                // column 1: course name
-                // column 2: course group
-                // column 3: faculty code
-                // column 4: faculty name
-                courseList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-            }
-        }
+        courseList.addAll(UtilData.cursorToCourseList(cursor2))
         assert(courseList.size == 2)
         assert(courseList[0].courseName == "AAA")
         assert(courseList[1].courseName == "CCC")
@@ -139,17 +112,7 @@ class DatabaseUnitTest {
         }
         assert(daoTimetable.getList().size == 5)
         val cursor1: Cursor = daoTimetable.getCourseList()
-        val courseList: ArrayList<ModelCourse> = arrayListOf()
-        cursor1.use { c ->
-            while (c.moveToNext()) {
-                // column 0: course code
-                // column 1: course name
-                // column 2: course group
-                // column 3: faculty code
-                // column 4: faculty name
-                courseList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-            }
-        }
+        val courseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor1)
         assert(courseList.size == 2)
         assert(courseList[0].courseName == "AAA")
         assert(courseList[1].courseName == "BBB")
@@ -157,16 +120,7 @@ class DatabaseUnitTest {
         courseList.clear()
         assert(courseList.size == 0)
         val cursor2: Cursor = daoTimetable.getCourseList()
-        cursor2.use { c ->
-            while (c.moveToNext()) {
-                // column 0: course code
-                // column 1: course name
-                // column 2: course group
-                // column 3: faculty code
-                // column 4: faculty name
-                courseList.add(ModelCourse(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)))
-            }
-        }
+        courseList.addAll(UtilData.cursorToCourseList(cursor2))
         assert(courseList.size == 1)
         assert(courseList[0].courseName == "AAA")
     }
@@ -183,5 +137,39 @@ class DatabaseUnitTest {
         assert(daoTimetable.getListByDay("Wednesday").size == 1)
         assert(daoTimetable.getListByDay("Thursday").isEmpty())
         assert(daoTimetable.getListByDay("Friday").size == 2)
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun updateVenue() {
+        assert(daoTimetable.getList().isEmpty())
+        for (data in TestData.databaseDataArray) {
+            daoTimetable.insert(data)
+        }
+        assert(daoTimetable.getList().size == 5)
+        val timetableList: MutableList<EntityTimetable> = daoTimetable.getList().toMutableList()
+        assert(timetableList[0].courseName == "AAA")
+        assert(timetableList[0].timetableVenue == "Venue 1")
+        assert(timetableList[1].courseName == "AAA")
+        assert(timetableList[1].timetableVenue == "Venue 1")
+        assert(timetableList[2].courseName == "AAA")
+        assert(timetableList[2].timetableVenue == "Venue 2")
+        assert(timetableList[3].courseName == "BBB")
+        assert(timetableList[3].timetableVenue == "Venue 1")
+        assert(timetableList[4].courseName == "BBB")
+        assert(timetableList[4].timetableVenue == "Venue 3")
+        daoTimetable.updateVenue("Venue 4", timetableList[1].timetableId)
+        timetableList.clear()
+        timetableList.addAll(daoTimetable.getList().toMutableList())
+        assert(timetableList[0].courseName == "AAA")
+        assert(timetableList[0].timetableVenue == "Venue 1")
+        assert(timetableList[1].courseName == "AAA")
+        assert(timetableList[1].timetableVenue == "Venue 4")
+        assert(timetableList[2].courseName == "AAA")
+        assert(timetableList[2].timetableVenue == "Venue 2")
+        assert(timetableList[3].courseName == "BBB")
+        assert(timetableList[3].timetableVenue == "Venue 1")
+        assert(timetableList[4].courseName == "BBB")
+        assert(timetableList[4].timetableVenue == "Venue 3")
     }
 }

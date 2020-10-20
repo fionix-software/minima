@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.ModelCourse
 
-class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
+class DialogEditCourseName(context: Context, val data: ModelCourse) : Dialog(context) {
 
     init {
         setCanceledOnTouchOutside(false)
@@ -25,7 +25,7 @@ class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
         // super
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.dialog_edit)
+        setContentView(R.layout.dialog_edit_course_name)
 
         // edit text
         val courseNameEditText: EditText = findViewById(R.id.editText1)
@@ -39,7 +39,7 @@ class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
 
             // check if string is empty
             val courseName = courseNameEditText.text.toString().trim()
-            if (courseName.isEmpty() || courseName == data.courseName || courseName == context.getString(R.string.not_available)) {
+            if (courseName.isEmpty() || courseName == data.courseName) {
                 Toast.makeText(context, "Invalid course name", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -49,23 +49,6 @@ class DialogEdit(context: Context, val data: ModelCourse) : Dialog(context) {
 
                 // update course name
                 DatabaseMain.getDatabase(context).timetableDao().updateCourseName(courseName, data.courseCode, data.courseName, data.facultyCode)
-
-                // close dialog
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                    dismiss()
-                }
-            }
-        }
-
-        val deleteButton: Button = findViewById(R.id.deleteButton)
-        deleteButton.setOnClickListener {
-
-            // delete course
-            GlobalScope.launch(Dispatchers.IO) {
-
-                // delete
-                DatabaseMain.getDatabase(context).timetableDao().deleteByCourse(data.courseCode, data.courseName, data.courseGroup, data.facultyCode, data.facultyName)
 
                 // close dialog
                 withContext(Dispatchers.Main) {
