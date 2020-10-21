@@ -112,7 +112,8 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
 
             // parse cursor
             val cursor: Cursor = DatabaseMain.getDatabase(ctx).timetableDao().getCourseList()
-            val tempCourseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor)
+            val tempCourseList: ArrayList<ModelCourse> = ArrayList(UtilData.cursorToCourseList(cursor).sortedWith(compareBy { it.courseCode }))
+            cursor.close()
 
             // update course list
             courseList.clear()

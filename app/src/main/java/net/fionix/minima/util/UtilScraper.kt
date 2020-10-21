@@ -40,7 +40,6 @@ class UtilScraper {
             return arrayList
         }
 
-
         fun retrieveTimetable(facultyList: ArrayList<ModelFaculty>, courseCode: String, courseGroup: String): ArrayList<EntityTimetable> {
 
             // retrieve page

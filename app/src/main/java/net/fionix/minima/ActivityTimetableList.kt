@@ -53,7 +53,8 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
                 // parse cursor
                 val cursor: Cursor = DatabaseMain.getDatabase(ctx).timetableDao().getCourseList()
-                val courseListFromDatabase: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor)
+                val courseListFromDatabase: ArrayList<ModelCourse> = ArrayList(UtilData.cursorToCourseList(cursor).sortedWith(compareBy { it.courseCode }))
+                cursor.close()
 
                 // add faculty if not exist
                 val tempFacultyList: ArrayList<ModelFaculty> = arrayListOf()
@@ -162,7 +163,7 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
             // get timetable
             timetableList.clear()
-            timetableList.addAll(DatabaseMain.getDatabase(ctx).timetableDao().getList())
+            timetableList.addAll(UtilData.sortTimetable(ArrayList(DatabaseMain.getDatabase(ctx).timetableDao().getList())))
 
             // update
             withContext(Dispatchers.Main) {

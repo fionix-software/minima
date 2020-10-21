@@ -41,5 +41,14 @@ class TestData {
                 EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "THURSDAY", "-"),
                 EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "thursday", "-"),
         )
+        val sortTimetableCaseDataArray: ArrayList<EntityTimetable> = arrayListOf(
+                EntityTimetable(0, "-", "-", "-", "-", "-", "10:00 AM", "-", "Wednesday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "12:00 PM", "-", "Monday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "Friday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "3:00 PM", "-", "Wednesday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "10:00 AM", "-", "Friday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "8:00 AM", "-", "-", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "-", "-"),
+        )
     }
 }

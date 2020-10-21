@@ -94,5 +94,63 @@ class UtilData {
             }
             return arrayList
         }
+
+        // Getting day of the week using SimpleDateFormat depends on the first week in current year.
+        // e.g. In 2020, Wed (07 Jan) while first day of the week start with Thursday (02 Jan)
+        // * day of the week sequence use index 1 to 7 instead of 0 to 6 but start the date with index 0
+        // This is not what user should expect. Thus, week by int method is used.
+        private fun getDayOfTheWeek(day: String): Int {
+            when (day.toLowerCase(Locale.getDefault()).trim()) {
+                "monday" -> {
+                    return 0
+                }
+                "tuesday" -> {
+                    return 1
+                }
+                "wednesday" -> {
+                    return 2
+                }
+                "thursday" -> {
+                    return 3
+                }
+                "friday" -> {
+                    return 4
+                }
+                "saturday" -> {
+                    return 5
+                }
+                "sunday" -> {
+                    return 6
+                }
+                else -> return 7
+            }
+        }
+
+        // Invalid time will be pushed to front (lower index) and invalid day will be
+        // pushed to the back (higher index).
+        // Class day and invalid item should be in front to emphasize the importance
+        // - Class day is required by default
+        // - Class start time is no required but if invalid, should be highlighted to
+        //   to lecturer
+        fun sortTimetable(dataSet: ArrayList<EntityTimetable>): ArrayList<EntityTimetable> {
+
+            // check for null and empty list
+            if (dataSet.isEmpty()) {
+                return arrayListOf();
+            }
+
+            // group by day
+            val sortedList = arrayListOf<EntityTimetable>()
+            dataSet.sortedWith(compareBy {
+                getDayOfTheWeek(it.timetableDay)
+            }).groupBy { it.timetableDay }.values.map {
+                it.sortedWith(ComparatorTimetableTime()).toList()
+            }.forEach {
+                sortedList.addAll(it)
+            }
+
+            // return
+            return sortedList
+        }
     }
 }

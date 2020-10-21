@@ -4,7 +4,7 @@ import net.fionix.minima.test.TestData
 import net.fionix.minima.util.UtilData
 import org.junit.Test
 
-class DataFixerTest {
+class DataTest {
 
     @Test
     fun fixNoonDataFixerTest() {
@@ -69,6 +69,39 @@ class DataFixerTest {
         assert(fixedData[1].timetableDay == "Thursday")
         assert(fixedData[2].timetableDay == "Thursday")
         assert(fixedData[3].timetableDay == "Thursday")
+    }
+
+    @Test
+    fun sortTimetableCase() {
+        assert(TestData.sortTimetableCaseDataArray[0].timetableTimeStart == "10:00 AM")
+        assert(TestData.sortTimetableCaseDataArray[0].timetableDay == "Wednesday")
+        assert(TestData.sortTimetableCaseDataArray[1].timetableTimeStart == "12:00 PM")
+        assert(TestData.sortTimetableCaseDataArray[1].timetableDay == "Monday")
+        assert(TestData.sortTimetableCaseDataArray[2].timetableTimeStart == "-")
+        assert(TestData.sortTimetableCaseDataArray[2].timetableDay == "Friday")
+        assert(TestData.sortTimetableCaseDataArray[3].timetableTimeStart == "3:00 PM")
+        assert(TestData.sortTimetableCaseDataArray[3].timetableDay == "Wednesday")
+        assert(TestData.sortTimetableCaseDataArray[4].timetableTimeStart == "10:00 AM")
+        assert(TestData.sortTimetableCaseDataArray[4].timetableDay == "Friday")
+        assert(TestData.sortTimetableCaseDataArray[5].timetableTimeStart == "8:00 AM")
+        assert(TestData.sortTimetableCaseDataArray[5].timetableDay == "-")
+        assert(TestData.sortTimetableCaseDataArray[6].timetableTimeStart == "-")
+        assert(TestData.sortTimetableCaseDataArray[6].timetableDay == "-")
+        val fixedData = UtilData.sortTimetable(TestData.sortTimetableCaseDataArray)
+        assert(fixedData[0].timetableTimeStart == "12:00 PM")
+        assert(fixedData[0].timetableDay == "Monday")
+        assert(fixedData[1].timetableTimeStart == "10:00 AM")
+        assert(fixedData[1].timetableDay == "Wednesday")
+        assert(fixedData[2].timetableTimeStart == "3:00 PM")
+        assert(fixedData[2].timetableDay == "Wednesday")
+        assert(fixedData[3].timetableTimeStart == "-")
+        assert(fixedData[3].timetableDay == "Friday")
+        assert(fixedData[4].timetableTimeStart == "10:00 AM")
+        assert(fixedData[4].timetableDay == "Friday")
+        assert(fixedData[5].timetableTimeStart == "-")
+        assert(fixedData[5].timetableDay == "-")
+        assert(fixedData[6].timetableTimeStart == "8:00 AM")
+        assert(fixedData[6].timetableDay == "-")
     }
 
 }
