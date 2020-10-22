@@ -5,11 +5,16 @@ import net.fionix.minima.model.EntityTimetable
 class TestData {
     companion object {
         val databaseDataArray: ArrayList<EntityTimetable> = arrayListOf(
-                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Wednesday", "Venue 1"),
-                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Monday", "Venue 1"),
-                EntityTimetable(0, "-", "AAA", "-", "-", "-", "-", "-", "Friday", "Venue 2"),
-                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Friday", "Venue 1"),
-                EntityTimetable(0, "-", "BBB", "-", "-", "-", "-", "-", "Tuesday", "Venue 3"),
+                EntityTimetable(0, "ECE648", "Special topics", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "9:00 AM", "11:00 AM", "Monday", "ODL1"),
+                EntityTimetable(0, "ECE643", "Network security", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "8:00 AM", "10:00 AM", "Tuesday", "ODL1"),
+                EntityTimetable(0, "ECE648", "Special topics", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "2:00 PM", "4:00 PM", "Tuesday", "ODL1"),
+                EntityTimetable(0, "ELE672", "Industrial Topic", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "9:00 AM", "11:00 AM", "Thursday", "ODL1"),
+                EntityTimetable(0, "ECE643", "Network security", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "2:00 PM", "4:00 PM", "Thursday", "ODL1"),
+                EntityTimetable(0, "ELE607", "EE Project 2", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "3:00 PM", "4:00 PM", "Friday", "ODL1"),
+        )
+        val databaseDuplicateDataArray: ArrayList<EntityTimetable> = arrayListOf(
+                EntityTimetable(0, "ECE648", "Special topics", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "9:00 AM", "11:00 AM", "Monday", "ODL1"),
+                EntityTimetable(0, "ECE648", "Special topics", "EE241C8A", "EE", "Fakulti Kejuruteraan Elektrikal", "9:00 AM", "11:00 AM", "Monday", "ODL1"),
         )
         val fixNoonDataArray: ArrayList<EntityTimetable> = arrayListOf(
                 EntityTimetable(0, "-", "-", "-", "-", "-", "12:00 am", "2:00 pm", "-", "-"),
@@ -69,6 +74,19 @@ class TestData {
                 EntityTimetable(0, "A", "-", "D", "A", "-", "10:00 AM", "11:00 AM", "Monday", "-"),
                 EntityTimetable(0, "A", "-", "D", "A", "-", "11:00 AM", "12:00 PM", "Monday", "-"), // merged
                 EntityTimetable(0, "A", "-", "D", "A", "-", "12:00 PM", "1:00 PM", "Monday", "-"), // merged
+        )
+        val nonOverlapCase: ArrayList<EntityTimetable> = arrayListOf(
+                // same day
+                EntityTimetable(0, "-", "-", "-", "-", "-", "8:00 AM", "9:00 AM", "Monday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "9:00 AM", "10:00 AM", "Monday", "-"),
+                // different day
+                EntityTimetable(0, "-", "-", "-", "-", "-", "8:00 AM", "10:00 AM", "Tuesday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "9:00 AM", "1`:A00 AM", "Wednesday", "-"),
+        )
+        val overlapCase: ArrayList<EntityTimetable> = arrayListOf(
+                // same day
+                EntityTimetable(0, "-", "-", "-", "-", "-", "8:00 AM", "10:00 AM", "Monday", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "9:00 AM", "11:00 AM", "Monday", "-"),
         )
     }
 }

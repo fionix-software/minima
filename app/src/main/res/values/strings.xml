@@ -33,6 +33,7 @@
     <string name="delete">Delete</string>
     <string name="not_available">n/a</string>
     <string name="refresh">Refresh</string>
+    <string name="overlapped_timetable">Unable to generate timetable due to overlapping timetable</string>
 
     <!-- email -->
     <string name="email_text">

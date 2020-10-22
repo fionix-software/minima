@@ -1,6 +1,5 @@
 package net.fionix.minima
 
-import android.content.Context
 import android.database.Cursor
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
@@ -15,7 +14,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.io.IOException
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 class DatabaseUnitTest {
@@ -25,18 +23,16 @@ class DatabaseUnitTest {
 
     @Before
     fun createDb() {
-        databaseMain = Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext<Context>(), DatabaseMain::class.java).build()
+        databaseMain = Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext(), DatabaseMain::class.java).build()
         daoTimetable = databaseMain.timetableDao()
     }
 
     @After
-    @Throws(IOException::class)
     fun closeDb() {
         databaseMain.close()
     }
 
     @Test
-    @Throws(Exception::class)
     fun insertData() {
         assert(daoTimetable.getList().isEmpty())
         daoTimetable.insert(TestData.databaseDataArray[0])
@@ -44,137 +40,141 @@ class DatabaseUnitTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun insertMultipleData() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
-        assert(daoTimetable.getList().size == 5)
+        assert(daoTimetable.getList().size == 6)
     }
 
     @Test
-    @Throws(Exception::class)
+    fun insertMultipleDataDuplicate() {
+        assert(daoTimetable.getList().isEmpty())
+        for (data in TestData.databaseDuplicateDataArray) {
+            daoTimetable.insert(data)
+        }
+        assert(daoTimetable.getList().size == 1)
+    }
+
+    @Test
     fun clearData() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
-        assert(daoTimetable.getList().size == 5)
+        assert(daoTimetable.getList().size == 6)
         daoTimetable.clearData()
         assert(daoTimetable.getList().isEmpty())
     }
 
     @Test
-    @Throws(Exception::class)
     fun getCourseList() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
-        assert(daoTimetable.getList().size == 5)
+        assert(daoTimetable.getList().size == 6)
         val cursor: Cursor = daoTimetable.getCourseList()
         val courseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor)
         cursor.close()
-        assert(courseList.size == 2)
-        assert(courseList[0].courseName == "AAA")
-        assert(courseList[1].courseName == "BBB")
+        assert(courseList.size == 4)
+        assert(courseList[0].courseCode == "ECE643")
+        assert(courseList[1].courseCode == "ECE648")
+        assert(courseList[2].courseCode == "ELE607")
+        assert(courseList[3].courseCode == "ELE672")
     }
 
     @Test
-    @Throws(Exception::class)
-    fun update() {
+    fun updateCourseName() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
-        assert(daoTimetable.getList().size == 5)
+        assert(daoTimetable.getList().size == 6)
         val cursor1: Cursor = daoTimetable.getCourseList()
         val courseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor1)
         cursor1.close()
-        assert(courseList.size == 2)
-        assert(courseList[0].courseName == "AAA")
-        assert(courseList[1].courseName == "BBB")
-        daoTimetable.updateCourseName("CCC", courseList[1].courseCode, courseList[1].courseName, courseList[1].facultyCode)
+        assert(courseList.size == 4)
+        assert(courseList[0].courseName == "Network security")
+        assert(courseList[1].courseName == "Special topics")
+        assert(courseList[2].courseName == "EE Project 2")
+        assert(courseList[3].courseName == "Industrial Topic")
+        daoTimetable.updateCourseName("Special topics (Repeat)", courseList[1].courseCode, courseList[1].courseName, courseList[1].facultyCode)
         courseList.clear()
         assert(courseList.size == 0)
         val cursor2: Cursor = daoTimetable.getCourseList()
         courseList.addAll(UtilData.cursorToCourseList(cursor2))
         cursor2.close()
-        assert(courseList.size == 2)
-        assert(courseList[0].courseName == "AAA")
-        assert(courseList[1].courseName == "CCC")
+        assert(courseList.size == 4)
+        assert(courseList[0].courseName == "Network security")
+        assert(courseList[1].courseName == "Special topics (Repeat)")
+        assert(courseList[2].courseName == "EE Project 2")
+        assert(courseList[3].courseName == "Industrial Topic")
     }
 
     @Test
-    @Throws(Exception::class)
     fun deleteByCourse() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
-        assert(daoTimetable.getList().size == 5)
+        assert(daoTimetable.getList().size == 6)
         val cursor1: Cursor = daoTimetable.getCourseList()
         val courseList: ArrayList<ModelCourse> = UtilData.cursorToCourseList(cursor1)
         cursor1.close()
-        assert(courseList.size == 2)
-        assert(courseList[0].courseName == "AAA")
-        assert(courseList[1].courseName == "BBB")
+        assert(courseList.size == 4)
+        assert(courseList[0].courseName == "Network security")
+        assert(courseList[1].courseName == "Special topics")
+        assert(courseList[2].courseName == "EE Project 2")
+        assert(courseList[3].courseName == "Industrial Topic")
         daoTimetable.deleteByCourse(courseList[1].courseCode, courseList[1].courseName, courseList[1].courseGroup, courseList[1].facultyCode, courseList[1].facultyName)
         courseList.clear()
         assert(courseList.size == 0)
         val cursor2: Cursor = daoTimetable.getCourseList()
         courseList.addAll(UtilData.cursorToCourseList(cursor2))
         cursor2.close()
-        assert(courseList.size == 1)
-        assert(courseList[0].courseName == "AAA")
+        assert(courseList.size == 3)
+        assert(courseList[0].courseName == "Network security")
+        assert(courseList[1].courseName == "EE Project 2")
+        assert(courseList[2].courseName == "Industrial Topic")
     }
 
     @Test
-    @Throws(Exception::class)
     fun getListByDay() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
         assert(daoTimetable.getListByDay("Monday").size == 1)
-        assert(daoTimetable.getListByDay("Tuesday").size == 1)
-        assert(daoTimetable.getListByDay("Wednesday").size == 1)
-        assert(daoTimetable.getListByDay("Thursday").isEmpty())
-        assert(daoTimetable.getListByDay("Friday").size == 2)
+        assert(daoTimetable.getListByDay("Tuesday").size == 2)
+        assert(daoTimetable.getListByDay("Wednesday").isEmpty())
+        assert(daoTimetable.getListByDay("Thursday").size == 2)
+        assert(daoTimetable.getListByDay("Friday").size == 1)
     }
 
     @Test
-    @Throws(Exception::class)
     fun updateVenue() {
         assert(daoTimetable.getList().isEmpty())
         for (data in TestData.databaseDataArray) {
             daoTimetable.insert(data)
         }
-        assert(daoTimetable.getList().size == 5)
+        assert(daoTimetable.getList().size == 6)
         val timetableList: MutableList<EntityTimetable> = daoTimetable.getList().toMutableList()
-        assert(timetableList[0].courseName == "AAA")
-        assert(timetableList[0].timetableVenue == "Venue 1")
-        assert(timetableList[1].courseName == "AAA")
-        assert(timetableList[1].timetableVenue == "Venue 1")
-        assert(timetableList[2].courseName == "AAA")
-        assert(timetableList[2].timetableVenue == "Venue 2")
-        assert(timetableList[3].courseName == "BBB")
-        assert(timetableList[3].timetableVenue == "Venue 1")
-        assert(timetableList[4].courseName == "BBB")
-        assert(timetableList[4].timetableVenue == "Venue 3")
-        daoTimetable.updateVenue("Venue 4", timetableList[1].timetableId)
+        assert(timetableList[0].timetableVenue == "ODL1")
+        assert(timetableList[1].timetableVenue == "ODL1")
+        assert(timetableList[2].timetableVenue == "ODL1")
+        assert(timetableList[3].timetableVenue == "ODL1")
+        assert(timetableList[4].timetableVenue == "ODL1")
+        assert(timetableList[5].timetableVenue == "ODL1")
+        daoTimetable.updateVenue("ODL1a", timetableList[1].timetableId)
         timetableList.clear()
         timetableList.addAll(daoTimetable.getList().toMutableList())
-        assert(timetableList[0].courseName == "AAA")
-        assert(timetableList[0].timetableVenue == "Venue 1")
-        assert(timetableList[1].courseName == "AAA")
-        assert(timetableList[1].timetableVenue == "Venue 4")
-        assert(timetableList[2].courseName == "AAA")
-        assert(timetableList[2].timetableVenue == "Venue 2")
-        assert(timetableList[3].courseName == "BBB")
-        assert(timetableList[3].timetableVenue == "Venue 1")
-        assert(timetableList[4].courseName == "BBB")
-        assert(timetableList[4].timetableVenue == "Venue 3")
+        assert(timetableList[0].timetableVenue == "ODL1")
+        assert(timetableList[1].timetableVenue == "ODL1a")
+        assert(timetableList[2].timetableVenue == "ODL1")
+        assert(timetableList[3].timetableVenue == "ODL1")
+        assert(timetableList[4].timetableVenue == "ODL1")
+        assert(timetableList[5].timetableVenue == "ODL1")
     }
 }

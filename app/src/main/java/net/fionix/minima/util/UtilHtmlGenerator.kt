@@ -1,6 +1,11 @@
 package net.fionix.minima.util
 
-object UtilHtmlTimetableGenerator {
+import net.fionix.minima.model.EntityTimetable
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
+
+object UtilHtmlGenerator {
 
     //
     // fun generateTable(day: String, arrayListTimetable: ArrayList<ClassTimetable?>?): String? {
@@ -117,37 +122,44 @@ object UtilHtmlTimetableGenerator {
     //     return html
     // }
     //
-    // fun checkOverlapTimetableTime(arrayList: ArrayList<ClassTimetable?>?): Boolean {
-    //
-    //     // check for overlap timetable
-    //     for (i in arrayList!!.indices) {
-    //         for (j in arrayList.indices) {
-    //
-    //             // check for same time for the same day
-    //             if (i != j) {
-    //                 if (arrayList[i]!!.day == arrayList[j]!!.day && arrayList[i]!!.start == arrayList[j]!!.start) {
-    //                     return true
-    //                 }
-    //             }
-    //
-    //             // check for timetable timeline
-    //             if (j > i) {
-    //                 try {
-    //                     if (arrayList[i]!!.day == arrayList[j]!!.day) {
-    //                         val dateFormat1: DateFormat = SimpleDateFormat("hh:mm a")
-    //                         val date1 = dateFormat1.parse(arrayList[i]!!.end)
-    //                         val dateFormat2: DateFormat = SimpleDateFormat("hh:mm a")
-    //                         val date2 = dateFormat2.parse(arrayList[j]!!.start)
-    //                         if (date2.before(date1)) {
-    //                             return true
-    //                         }
-    //                     }
-    //                 } catch (e: ParseException) {
-    //                     e.printStackTrace()
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return false
-    // }
+
+    fun checkOverlapTimetableExist(dataSet: ArrayList<EntityTimetable>): Boolean {
+
+        // iterate through by index
+        val formatter: DateFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
+        for (index in 0 until dataSet.size) {
+            for (comparingIndex in 0 until dataSet.size) {
+
+                // skip same index
+                if (index == comparingIndex) {
+                    continue
+                }
+
+                // only compare within same day
+                if (dataSet[index].timetableDay != dataSet[comparingIndex].timetableDay) {
+                    continue
+                }
+
+                // parse time
+                val d0: Date?
+                val d1Start: Date?
+                val d1End: Date?
+                try {
+                    d0 = formatter.parse(dataSet[index].timetableTimeStart)
+                    d1Start = formatter.parse(dataSet[comparingIndex].timetableTimeStart)
+                    d1End = formatter.parse(dataSet[comparingIndex].timetableTimeEnd)
+                } catch (e: Exception) {
+                    continue
+                }
+
+                // check overlap and return
+                if (d0.after(d1Start) && d0.before(d1End)) {
+                    return true
+                }
+            }
+        }
+
+        // return
+        return false
+    }
 }

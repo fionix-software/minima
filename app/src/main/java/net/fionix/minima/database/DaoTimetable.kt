@@ -16,7 +16,7 @@ interface DaoTimetable {
     @Query("SELECT * FROM EntityTimetable WHERE timetableDay=:day")
     fun getListByDay(day: String): List<EntityTimetable>
 
-    @Query("SELECT DISTINCT courseCode, courseName, courseGroup, facultyCode, facultyName FROM EntityTimetable")
+    @Query("SELECT DISTINCT courseCode, courseName, courseGroup, facultyCode, facultyName FROM EntityTimetable ORDER BY courseCode ASC")
     fun getCourseList(): Cursor
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

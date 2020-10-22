@@ -2,9 +2,10 @@ package net.fionix.minima.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(indices = [Index(value = ["courseCode", "courseGroup", "facultyCode", "timetableTimeStart", "timetableTimeEnd", "timetableDay"], unique = true)])
 data class EntityTimetable(
         @PrimaryKey(autoGenerate = true)
         var timetableId: Int,

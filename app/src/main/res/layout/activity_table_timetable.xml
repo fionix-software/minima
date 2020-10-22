@@ -7,8 +7,17 @@
     android:padding="8dp"
     tools:context="net.fionix.minima.ActivityTimetableTable">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/overlapped_timetable" />
+
     <WebView
-        android:id="@+id/webView1"
+        android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -18,7 +27,7 @@
     </WebView>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

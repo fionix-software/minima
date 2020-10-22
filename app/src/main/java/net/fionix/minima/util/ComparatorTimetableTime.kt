@@ -8,12 +8,13 @@ class ComparatorTimetableTime : Comparator<EntityTimetable> {
     override fun compare(p0: EntityTimetable, p1: EntityTimetable): Int {
 
         // date
+        val formatter = SimpleDateFormat("h:mm a", Locale.getDefault())
         val d0: Date?
         val d1: Date?
 
         // current item
         try {
-            d0 = SimpleDateFormat("h:mm a", Locale.getDefault()).parse(p0.timetableTimeStart)
+            d0 = formatter.parse(p0.timetableTimeStart)
         } catch (e: Exception) {
             // Please refer to UtilData.sortTimetable documentation
             return -1
@@ -21,7 +22,7 @@ class ComparatorTimetableTime : Comparator<EntityTimetable> {
 
         // next item
         try {
-            d1 = SimpleDateFormat("h:mm a", Locale.getDefault()).parse(p1.timetableTimeStart)
+            d1 = formatter.parse(p1.timetableTimeStart)
         } catch (e: Exception) {
             // Please refer to UtilData.sortTimetable documentation
             return 1
