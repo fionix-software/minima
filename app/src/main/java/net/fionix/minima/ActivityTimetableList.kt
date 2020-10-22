@@ -79,8 +79,9 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
                 for (courseItem in tempCourseList) {
 
                     // retrieve timetable
-                    val retrievedTimetableList = UtilData.fixTimetable(UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup))
-                    newTimetableList.addAll(retrievedTimetableList)
+                    val retrievedTimetableList = UtilScraper.retrieveTimetable(tempFacultyList, courseItem.courseCode, courseItem.courseGroup)
+                    val fixedRetrievedTimetableList = UtilData.mergeClass(UtilData.sortTimetable(UtilData.fixTimetable(retrievedTimetableList)))
+                    newTimetableList.addAll(fixedRetrievedTimetableList)
 
                     // parse course
                     for (retrievedItem in retrievedTimetableList) {

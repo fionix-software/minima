@@ -38,7 +38,8 @@ class AdapterTimetable(private val dataset: MutableList<EntityTimetable>, privat
         holder.secondaryText.text = secondaryString
 
         // tertiary
-        holder.tertiaryText.text = dataset[position].timetableVenue
+        val tertiaryString: String = dataset[position].courseGroup + " - " + dataset[position].timetableVenue
+        holder.tertiaryText.text = tertiaryString
 
         // set on long click listener
         holder.itemView.setOnLongClickListener {

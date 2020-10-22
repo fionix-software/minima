@@ -25,7 +25,7 @@ open class WidgetReceiver : AppWidgetProvider() {
             val remoteViews = RemoteViews(context.packageName, R.layout.widget_layout)
 
             // refresh list
-            remoteViews.setOnClickPendingIntent(R.id.imageView, pendingSelfIntent(context, "refresh"))
+            remoteViews.setOnClickPendingIntent(R.id.imageView, pendingSelfIntentRefresh(context))
 
             // open application on widget top bar click
             remoteViews.setTextViewText(R.id.textView, SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time))
@@ -69,9 +69,9 @@ open class WidgetReceiver : AppWidgetProvider() {
         }
     }
 
-    private fun pendingSelfIntent(context: Context, action: String): PendingIntent {
+    private fun pendingSelfIntentRefresh(context: Context): PendingIntent {
         val intent = Intent(context, javaClass)
-        intent.action = action
+        intent.action = "refresh"
         return PendingIntent.getBroadcast(context, 0, intent, 0)
     }
 

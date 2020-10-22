@@ -70,8 +70,9 @@ class DialogAdd(context: Context) : Dialog(context) {
                 }
 
                 // retrieve timetable
-                val timetableList: ArrayList<EntityTimetable> = UtilData.fixTimetable(UtilScraper.retrieveTimetable(facultyList, courseCode, courseGroup))
-                if (timetableList.isEmpty()) {
+                val timetableList: ArrayList<EntityTimetable> = UtilScraper.retrieveTimetable(facultyList, courseCode, courseGroup)
+                val fixedTimetableList = UtilData.mergeClass(UtilData.sortTimetable(UtilData.fixTimetable(timetableList)))
+                if (fixedTimetableList.isEmpty()) {
 
                     // notify
                     withContext(Dispatchers.Main) {
@@ -82,7 +83,7 @@ class DialogAdd(context: Context) : Dialog(context) {
                 }
 
                 // save into database
-                for (item in timetableList) {
+                for (item in fixedTimetableList) {
                     DatabaseMain.getDatabase(context).timetableDao().insert(item)
                 }
 

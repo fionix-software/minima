@@ -104,4 +104,14 @@ class DataTest {
         assert(fixedData[6].timetableDay == "-")
     }
 
+    @Test
+    fun mergeClassCase() {
+        val fixedData = UtilData.mergeClass(TestData.mergeClassDataArray)
+        assert(fixedData.size == 9)
+        assert(fixedData[0].timetableTimeStart == "10:00 AM")
+        assert(fixedData[0].timetableTimeEnd == "12:00 PM")
+        assert(fixedData[8].timetableTimeStart == "10:00 AM")
+        assert(fixedData[8].timetableTimeEnd == "1:00 PM")
+    }
+
 }

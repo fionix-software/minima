@@ -50,5 +50,25 @@ class TestData {
                 EntityTimetable(0, "-", "-", "-", "-", "-", "8:00 AM", "-", "-", "-"),
                 EntityTimetable(0, "-", "-", "-", "-", "-", "-", "-", "-", "-"),
         )
+        val mergeClassDataArray: ArrayList<EntityTimetable> = arrayListOf(
+                // merge case
+                EntityTimetable(0, "A", "-", "A", "A", "-", "10:00 AM", "11:00 AM", "Monday", "-"),
+                EntityTimetable(0, "A", "-", "A", "A", "-", "11:00 AM", "12:00 PM", "Monday", "-"), // merged
+                // single course
+                EntityTimetable(0, "B", "-", "A", "A", "-", "3:00 PM", "5:00 PM", "Tuesday", "-"),
+                // different course group
+                EntityTimetable(0, "A", "-", "A", "A", "-", "3:00 PM", "4:00 PM", "Friday", "-"),
+                EntityTimetable(0, "A", "-", "B", "A", "-", "4:00 PM", "5:00 PM", "Friday", "-"),
+                // different course code
+                EntityTimetable(0, "B", "-", "B", "A", "-", "3:00 PM", "4:00 PM", "Friday", "-"),
+                EntityTimetable(0, "C", "-", "B", "A", "-", "4:00 PM", "5:00 PM", "Friday", "-"),
+                // different faculty code
+                EntityTimetable(0, "D", "-", "D", "A", "-", "3:00 PM", "4:00 PM", "Friday", "-"),
+                EntityTimetable(0, "D", "-", "D", "D", "-", "4:00 PM", "5:00 PM", "Friday", "-"),
+                // recursive
+                EntityTimetable(0, "A", "-", "D", "A", "-", "10:00 AM", "11:00 AM", "Monday", "-"),
+                EntityTimetable(0, "A", "-", "D", "A", "-", "11:00 AM", "12:00 PM", "Monday", "-"), // merged
+                EntityTimetable(0, "A", "-", "D", "A", "-", "12:00 PM", "1:00 PM", "Monday", "-"), // merged
+        )
     }
 }

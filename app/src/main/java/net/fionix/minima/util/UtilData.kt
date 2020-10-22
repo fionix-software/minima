@@ -152,5 +152,53 @@ class UtilData {
             // return
             return sortedList
         }
+
+        // There are cases where a same class for 2 hours split into 2 separate class.
+        // There are no issue with this case but it only increase list item and it is a
+        // good effort if these classes can be merged to reduce the list item and improve
+        // user experience.
+        fun mergeClass(dataSet: ArrayList<EntityTimetable>): ArrayList<EntityTimetable> {
+
+            // merge class
+            var mergedNext = false
+            var itemChanged = false
+            val mergedTimetableItem = arrayListOf<EntityTimetable>()
+            for (index in 0 until dataSet.size) {
+
+                // skip if previously has been merged
+                if (mergedNext) {
+                    mergedNext = false
+                    continue
+                }
+
+                // prevent out of bound
+                if (index == (dataSet.size - 1)) {
+                    mergedTimetableItem.add(dataSet[index])
+                    break
+                }
+
+                // merger
+                if (dataSet[index].courseCode == dataSet[index + 1].courseCode && dataSet[index].courseGroup == dataSet[index + 1].courseGroup && dataSet[index].facultyCode == dataSet[index + 1].facultyCode && dataSet[index].timetableDay == dataSet[index + 1].timetableDay && dataSet[index].timetableTimeEnd == dataSet[index + 1].timetableTimeStart) {
+
+                    // fix the starting class to have end time from the next class (as its merged)
+                    val mergedData = dataSet[index]
+                    mergedData.timetableTimeEnd = dataSet[index + 1].timetableTimeEnd
+                    mergedTimetableItem.add(mergedData)
+
+                    // flag
+                    mergedNext = true
+                    itemChanged = true
+                }
+                else {
+                    mergedTimetableItem.add(dataSet[index])
+                }
+            }
+
+            // recursive call
+            if (itemChanged) {
+                return mergeClass(mergedTimetableItem)
+            }
+            return mergedTimetableItem
+        }
     }
 }
