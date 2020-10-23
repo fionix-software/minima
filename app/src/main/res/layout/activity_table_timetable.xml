@@ -1,37 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context="net.fionix.minima.ActivityTimetableTable">
 
-    <TextView
-        android:id="@+id/textView"
+    <com.github.tlaabs.timetableview.TimetableView
+        android:id="@+id/timetable"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/overlapped_timetable" />
-
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
-
-    </WebView>
-
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/timetable_export"
-        android:textColor="@android:color/white" />
+        android:layout_height="match_parent"
+        app:column_count="8"
+        app:header_title="@array/timetable_header_title"
+        app:row_count="16"
+        app:side_cell_width="20dp"
+        app:start_time="8" />
 
 </LinearLayout>

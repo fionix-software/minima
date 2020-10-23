@@ -3,6 +3,8 @@ package net.fionix.minima.util
 import android.database.Cursor
 import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelCourse
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -93,11 +95,21 @@ object UtilData {
         return arrayList
     }
 
+    fun checkValidTimetableTime(time: String): Boolean {
+        val formatter = SimpleDateFormat("h:mm a", Locale.getDefault())
+        try {
+            formatter.parse(time)
+        } catch (e: Exception) {
+            return false
+        }
+        return true
+    }
+
     // Getting day of the week using SimpleDateFormat depends on the first week in current year.
     // e.g. In 2020, Wed (07 Jan) while first day of the week start with Thursday (02 Jan)
     // * day of the week sequence use index 1 to 7 instead of 0 to 6 but start the date with index 0
     // This is not what user should expect. Thus, week by int method is used.
-    private fun getDayOfTheWeek(day: String): Int {
+    fun getDayOfTheWeek(day: String): Int {
         when (day.toLowerCase(Locale.getDefault()).trim()) {
             "monday" -> {
                 return 0
@@ -197,5 +209,45 @@ object UtilData {
             return mergeClass(mergedTimetableItem)
         }
         return mergedTimetableItem
+    }
+
+    fun checkOverlapTimetableExist(dataSet: java.util.ArrayList<EntityTimetable>): Boolean {
+
+        // iterate through by index
+        val formatter: DateFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
+        for (index in 0 until dataSet.size) {
+            for (comparingIndex in 0 until dataSet.size) {
+
+                // skip same index
+                if (index == comparingIndex) {
+                    continue
+                }
+
+                // only compare within same day
+                if (dataSet[index].timetableDay != dataSet[comparingIndex].timetableDay) {
+                    continue
+                }
+
+                // parse time
+                val d0: Date?
+                val d1Start: Date?
+                val d1End: Date?
+                try {
+                    d0 = formatter.parse(dataSet[index].timetableTimeStart)
+                    d1Start = formatter.parse(dataSet[comparingIndex].timetableTimeStart)
+                    d1End = formatter.parse(dataSet[comparingIndex].timetableTimeEnd)
+                } catch (e: Exception) {
+                    continue
+                }
+
+                // check overlap and return
+                if (d0.after(d1Start) && d0.before(d1End)) {
+                    return true
+                }
+            }
+        }
+
+        // return
+        return false
     }
 }

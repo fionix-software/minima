@@ -114,4 +114,16 @@ class DataTest {
         assert(fixedData[8].timetableTimeEnd == "1:00 PM")
     }
 
+    @Test
+    fun nonOverlapTimetableCase() {
+        assert(TestData.nonOverlapCase.size == 4)
+        assert(!UtilData.checkOverlapTimetableExist(TestData.nonOverlapCase))
+    }
+
+    @Test
+    fun overlapTimetableCase() {
+        assert(TestData.overlapCase.size == 2)
+        assert(UtilData.checkOverlapTimetableExist(TestData.overlapCase))
+    }
+
 }

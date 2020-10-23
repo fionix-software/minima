@@ -50,4 +50,16 @@
     <string name="shortcut_student_portal_short">Student portal</string>
     <string name="shortcut_student_portal_long">Open Simsweb UiTM in browser</string>
 
+    <!-- timetable -->
+    <string-array name="timetable_header_title">
+        <item />
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </string-array>
+
 </resources>
