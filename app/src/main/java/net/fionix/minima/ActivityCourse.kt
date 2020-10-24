@@ -69,12 +69,12 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
 
                 // confirmation dialog
                 val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(view.context)
-                alertDialogBuilder.setTitle("Are you sure to delete ${courseList[itemIndex].courseCode}?")
-                alertDialogBuilder.setMessage("This operation is irreversible.")
-                alertDialogBuilder.setPositiveButton("Yes", OnButtonClickConfirmDeleteCourseAlertDialog(view.context, courseList[itemIndex]) {
+                alertDialogBuilder.setTitle(getString(R.string.dialog_delete_course_code_title).replace("\$courseCode", courseList[itemIndex].courseCode))
+                alertDialogBuilder.setMessage(getString(R.string.dialog_delete_course_code_message))
+                alertDialogBuilder.setPositiveButton(getString(R.string.dialog_button_yes), OnButtonClickConfirmDeleteCourseAlertDialog(view.context, courseList[itemIndex]) {
                     updateList()
                 })
-                alertDialogBuilder.setNegativeButton("No", OnButtonClickDismissAlertDialog() {
+                alertDialogBuilder.setNegativeButton(getString(R.string.dialog_button_no), OnButtonClickDismissAlertDialog() {
                     // without update list on dismiss, the item get missing
                     updateList()
                 })

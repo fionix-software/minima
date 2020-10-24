@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import net.fionix.minima.R
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.ModelCourse
 
@@ -22,7 +23,7 @@ class OnButtonClickConfirmDeleteCourseAlertDialog(private val context: Context, 
 
             // close dialog
             withContext(Dispatchers.Main) {
-                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                 functionCallback()
                 p0?.dismiss()
             }

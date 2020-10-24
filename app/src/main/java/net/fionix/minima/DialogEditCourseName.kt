@@ -40,7 +40,7 @@ class DialogEditCourseName(context: Context, val data: ModelCourse) : Dialog(con
             // check if string is empty
             val courseName = courseNameEditText.text.toString().trim()
             if (courseName.isEmpty() || courseName == data.courseName) {
-                Toast.makeText(context, "Invalid course name", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context.getString(R.string.invalid_course_name), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -52,7 +52,7 @@ class DialogEditCourseName(context: Context, val data: ModelCourse) : Dialog(con
 
                 // close dialog
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                     dismiss()
                 }
             }

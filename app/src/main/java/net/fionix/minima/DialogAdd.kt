@@ -48,11 +48,12 @@ class DialogAdd(context: Context) : Dialog(context) {
             val courseCode: String = courseCodeEditText.text.toString().trim()
             val courseGroup: String = courseGroupEditText.text.toString().trim()
             if (courseCode.isEmpty() || courseGroup.isEmpty()) {
-                Toast.makeText(context, "Invalid course information", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context.getString(R.string.invalid_course_info), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             // enable progress bar
+            addButton.isEnabled = false
             progressBar.visibility = View.VISIBLE;
 
             // start coroutine
@@ -63,8 +64,9 @@ class DialogAdd(context: Context) : Dialog(context) {
                 if (facultyList.isEmpty()) {
                     // notify
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Failed to get faculty information", Toast.LENGTH_SHORT).show()
-                        progressBar.visibility = View.GONE;
+                        Toast.makeText(context, context.getString(R.string.failed_get_faculty_info), Toast.LENGTH_SHORT).show()
+                        progressBar.visibility = View.GONE
+                        addButton.isEnabled = true
                     }
                     return@launch
                 }
@@ -76,8 +78,9 @@ class DialogAdd(context: Context) : Dialog(context) {
 
                     // notify
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Failed to get timetable information", Toast.LENGTH_SHORT).show()
-                        progressBar.visibility = View.GONE;
+                        Toast.makeText(context, context.getString(R.string.failed_get_timetable_info), Toast.LENGTH_SHORT).show()
+                        progressBar.visibility = View.GONE
+                        addButton.isEnabled = true
                     }
                     return@launch
                 }
@@ -89,8 +92,9 @@ class DialogAdd(context: Context) : Dialog(context) {
 
                 // notify
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                     progressBar.visibility = View.GONE;
+                    addButton.isEnabled = true
                 }
             }
         }

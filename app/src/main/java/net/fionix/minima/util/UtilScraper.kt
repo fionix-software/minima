@@ -12,7 +12,7 @@ object UtilScraper {
 
     private const val facultyScrapableLink: String = "http://icress.uitm.edu.my/jadual/jadual/jadual.asp"
     private const val timetableScrapableLinkPrefix: String = "http://icress.uitm.edu.my/jadual/"
-    private const val timeoutInMillis: Int = 500
+    private const val timeoutInMillis: Int = 1000
 
     fun retrieveFacultyList(): ArrayList<ModelFaculty> {
 

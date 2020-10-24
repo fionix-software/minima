@@ -12,9 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:column_count="8"
+        app:header_highlight_color="@color/colorAccent"
         app:header_title="@array/timetable_header_title"
         app:row_count="16"
         app:side_cell_width="20dp"
-        app:start_time="8" />
+        app:start_time="8"
+        app:sticker_colors="@array/timetable_sticker_color" />
 
 </LinearLayout>

@@ -21,8 +21,8 @@
         <androidx.preference.Preference
             app:iconSpaceReserved="false"
             app:key="preference_student_portal"
-            app:summary="Open Student Portal with browser"
-            app:title="Open Student Portal" />
+            app:summary="Open iStudent with browser"
+            app:title="Open iStudent portal" />
 
     </androidx.preference.PreferenceCategory>
 
@@ -46,7 +46,7 @@
         <androidx.preference.Preference
             app:iconSpaceReserved="false"
             app:key="preference_version"
-            app:summary="Fionix Software"
+            app:summary="Open Fionix Software page"
             app:title="Minima v0.0" />
 
     </androidx.preference.PreferenceCategory>

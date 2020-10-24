@@ -80,9 +80,9 @@ class ActivityTimetableTable : Fragment() {
 
                     // confirmation dialog
                     val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(view.context)
-                    alertDialogBuilder.setTitle("Overlapped timetable detected")
-                    alertDialogBuilder.setMessage("Please check your course list and timetable. Due to overlapping timetable, timetable table could not be generated.")
-                    alertDialogBuilder.setNegativeButton("Dismiss", OnButtonClickDismissAlertDialog {
+                    alertDialogBuilder.setTitle(getString(R.string.dialog_overlap_timetable_title))
+                    alertDialogBuilder.setMessage(R.string.dialog_overlap_timetable_message)
+                    alertDialogBuilder.setNegativeButton(getString(R.string.dialog_button_dismiss), OnButtonClickDismissAlertDialog {
                         // noop
                     })
                     alertDialogBuilder.show()
@@ -94,7 +94,7 @@ class ActivityTimetableTable : Fragment() {
 
                 // display content
                 timetableView.add(scheduleList)
-                timetableView.setHeaderHighlight(UtilData.getDayOfTheWeek(SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time)))
+                timetableView.setHeaderHighlight(UtilData.getDayOfTheWeek(SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time)) + 1)
             }
 
         }

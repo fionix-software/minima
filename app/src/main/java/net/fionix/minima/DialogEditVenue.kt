@@ -40,7 +40,7 @@ class DialogEditVenue(context: Context, val data: EntityTimetable) : Dialog(cont
             // check if string is empty
             val venue = timetableVenueEditText.text.toString().trim()
             if (venue.isEmpty() || venue == data.timetableVenue) {
-                Toast.makeText(context, "Invalid venue", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context.getString(R.string.invalid_venue), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -52,7 +52,7 @@ class DialogEditVenue(context: Context, val data: EntityTimetable) : Dialog(cont
 
                 // close dialog
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                     dismiss()
                 }
             }

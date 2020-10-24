@@ -2,17 +2,16 @@
 
     <!-- app -->
     <string name="app_name">Minima</string>
-    <string name="app_version">Minima %v</string>
-    <string name="title_course">Course</string>
-    <string name="title_timetable">Timetable</string>
-    <string name="title_setting">Setting</string>
-    <string name="action_view">Fionix</string>
-    <string name="splash_screen">Splash Screen</string>
+    <string name="app_version">Minima $version</string>
+    <string name="title_course_list">Course</string>
+    <string name="title_timetable_list">Timetable</string>
+    <string name="title_timetable_table">Timetable</string>
+    <string name="title_setting">Settings</string>
+    <string name="title_info">Info</string>
+    <string name="splash_screen">Splash screen</string>
 
     <!-- course -->
-    <string name="course_add">Add Course</string>
-    <string name="course_list">Course List</string>
-    <string name="course_faculty">Faculty</string>
+    <string name="course_add">Add course</string>
     <string name="course_dialog_course_code">Course code</string>
     <string name="course_dialog_course_code_hint">e.g. EEE610</string>
     <string name="course_dialog_group_code">Group code</string>
@@ -21,36 +20,73 @@
     <string name="course_dialog_course_name_hint">e.g. Engineers in society</string>
     <string name="course_dialog_venue">Venue</string>
     <string name="course_dialog_venue_hint">e.g. Dewan Kuliah C, FKE</string>
-    <string name="course_dialog_extra">The guide can be found in the Setting tab. Please delete any unrelated course by check the course\'s faculty. This process is done automatically. Lowercase letters are acceptable.</string>
-
-    <!-- timetable -->
-    <string name="timetable_recheck">Recheck Timetable Online</string>
-    <string name="timetable_list">Timetable List</string>
-    <string name="timetable_export">Export as PNG</string>
 
     <!-- common -->
     <string name="save">Save</string>
-    <string name="delete">Delete</string>
     <string name="not_available">n/a</string>
     <string name="refresh">Refresh</string>
-    <string name="overlapped_timetable">Unable to generate timetable due to overlapping timetable</string>
+    <string name="success">Success</string>
+    <string name="invalid_course_info">Invalid course information</string>
+    <string name="invalid_course_name">Invalid course name</string>
+    <string name="invalid_venue">Invalid venue</string>
+    <string name="failed_recheck_timetable">Failed to recheck timetable</string>
+    <string name="failed_get_faculty_info">Failed to get faculty information</string>
+    <string name="failed_get_timetable_info">Failed to get timetable information</string>
+
+    <!-- dialog -->
+    <string name="dialog_delete_course_code_title">Are you sure to delete $courseCode?</string>
+    <string name="dialog_delete_course_code_message">This operation is irreversible.</string>
+    <string name="dialog_clear_data_title">Are you sure to clear data?</string>
+    <string name="dialog_clear_data_message">This operation is irreversible.</string>
+    <string name="dialog_overlap_timetable_title">Overlapped timetable detected</string>
+    <string name="dialog_overlap_timetable_message">Please check your course list and timetable. Due to overlapping timetable, timetable table could not be generated.</string>
+    <string name="dialog_info_course_list">
+        Press \"Add course\" button to add courses. Fill in the course code and course group and press \"Add course\" button to add.
+        \n\nThe input text is case insensitive, it can work with lowercase as well. If failed, please check your input or check iCress web availability. Sometime, iCress page hangs and cause Minima unable to get course information.
+        \n\nLong press on the timetable item to edit course name and swipe item to the left or right to delete the course. It will automatically delete related timetable too.
+        \n\nDue to Minima will automatically find the faculty, you might need to check your course list. Sometimes, same course code and course group can exist in other faculty as well. Remove anything that is unrelated.
+    </string>
+    <string name="dialog_info_timetable_list">
+        Timetable list depends on courses that you\'ve added. Please add your course in \"Course\" section.
+        \n\nLong click on timetable item to change the class venue. Click on \"Recheck timetable online\" button to recheck your registered course on iCress.
+        \n\nYour course name will be preserved, but class venue will be replaced with the value returned by the iCress. This is due to course name is not part of iCress, but class venue is.
+    </string>
+    <string name="dialog_info_timetable_table">
+        You can swipe up and down the timetable table view.
+        \n\nThe previous timetable table view is old and unmaintainable. With this version, timetable table view is upgraded into more simpler and maintainable library.
+        \n\nTo generate the timetable table view, you need to ensure that your timetable is not overlapping. You can fix overlapping timetable by deleting conflicting course. If it\'s out of your capability to fix the conflicting course, please use timetable list view instead.
+        \n\nWith this, timetable table view unable to export your timetable into any image format, at least for now.
+    </string>
+    <string name="dialog_info_settings">
+        Dear all,
+        \n\nMinima developer always considers your feedback from time to time. Currently, Minima developer is not UiTM student anymore (but once did) and the developer could not give his full commitment. Sorry.
+        \n\nThis application will always be free (without ads!) and be unofficial so that Minima is free to try out new things.
+        \n\nFeel free to give feedback, contribute or donate. The detail of the donation is on the Fionix Software page.
+        \n\nThank you for using Minima. Wishing you the best of luck on your studies.
+    </string>
+    <string name="dialog_button_yes">Yes</string>
+    <string name="dialog_button_no">No</string>
+    <string name="dialog_button_dismiss">Dismiss</string>
 
     <!-- email -->
+    <string name="email_intent_title">Send feedback via:</string>
+    <string name="email_subject">[Minima] Hi! I\'ve my feedback for you</string>
     <string name="email_text">
-        Title: Short brief of your feedback.\n\n
-        Description: Your full feedback.\n\n
-        Steps to reproduce (for report issue only): Clearly and chronologically (numbered list is recommended).\n\n
-        Expectation (for report issue only): How would you think it should behave / work.\n\n
-        Platform Info (for report issue only): Device full model (e.g. Google Pixel 4, Huawei Honor 8x, etc.).
+        Title: Short brief of your feedback.
+        \n\nDescription: Your full feedback.
+        \n\nSteps to reproduce (for report issue only): Clearly and chronologically (numbered list is recommended)
+        \n\nExpectation (for report issue only): Explain how would you think it should behave / work.
+        \n\nPlatform info (for report issue only): Device full model (e.g. Google Pixel 4, Huawei Honor 8x, etc.).
     </string>
 
     <!-- shortcut -->
     <string name="shortcut_icress_short">iCress</string>
     <string name="shortcut_icress_long">Open iCress in browser</string>
-    <string name="shortcut_student_portal_short">Student portal</string>
-    <string name="shortcut_student_portal_long">Open Simsweb UiTM in browser</string>
+    <string name="shortcut_student_portal_short"> iStudent</string>
+    <string name="shortcut_student_portal_long">Open iStudent portal in browser</string>
 
     <!-- timetable -->
+    <string name="timetable_recheck">Recheck timetable online</string>
     <string-array name="timetable_header_title">
         <item />
         <item>Mon</item>
@@ -60,6 +96,9 @@
         <item>Fri</item>
         <item>Sat</item>
         <item>Sun</item>
+    </string-array>
+    <string-array name="timetable_sticker_color">
+        <item>#9966cc</item>
     </string-array>
 
 </resources>

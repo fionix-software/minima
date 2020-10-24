@@ -15,6 +15,7 @@ class ActivitySettings : PreferenceFragmentCompat() {
     private val studentPortalLink: String = "https://simsweb.uitm.edu.my/SPORTAL_APP/SPORTAL_LOGIN/index.htm"
     private val githubRepoLink: String = "https://github.com/fionix-software/minima"
     private val fionixPageLink: String = "https://fionix.net/"
+    private val developerEmail = arrayOf("nazeb04@gmail.com")
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
 
@@ -26,10 +27,10 @@ class ActivitySettings : PreferenceFragmentCompat() {
 
             // confirmation dialog
             val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(preferenceManager.context)
-            alertDialogBuilder.setTitle("Are you sure to clear data?")
-            alertDialogBuilder.setMessage("This operation is irreversible.")
-            alertDialogBuilder.setPositiveButton("Yes", OnButtonClickConfirmClearDataAlertDialog(preferenceManager.context))
-            alertDialogBuilder.setNegativeButton("No", OnButtonClickDismissAlertDialog {
+            alertDialogBuilder.setTitle(getString(R.string.dialog_clear_data_title))
+            alertDialogBuilder.setMessage(getString(R.string.dialog_clear_data_message))
+            alertDialogBuilder.setPositiveButton(getString(R.string.dialog_button_yes), OnButtonClickConfirmClearDataAlertDialog(preferenceManager.context))
+            alertDialogBuilder.setNegativeButton(getString(R.string.dialog_button_no), OnButtonClickDismissAlertDialog {
                 // noop
             })
             alertDialogBuilder.show()
@@ -55,11 +56,11 @@ class ActivitySettings : PreferenceFragmentCompat() {
         // open email and use email template
         preferenceManager.findPreference<Preference>("preference_email")?.setOnPreferenceClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("nazeb04@gmail.com"))
-            intent.putExtra(Intent.EXTRA_SUBJECT, "[Minima] Hi! I've my feedback for you")
+            intent.putExtra(Intent.EXTRA_EMAIL, developerEmail)
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
             intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text))
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, "Send feedback via: "));
+            startActivity(Intent.createChooser(intent, getString(R.string.email_intent_title)));
             true
         }
 
@@ -72,7 +73,7 @@ class ActivitySettings : PreferenceFragmentCompat() {
         }
 
         // open fionix page with browser
-        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("%v", "v" + BuildConfig.VERSION_NAME)
+        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("\$version", "v" + BuildConfig.VERSION_NAME)
         preferenceManager.findPreference<Preference>("preference_version")?.setOnPreferenceClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(fionixPageLink)
