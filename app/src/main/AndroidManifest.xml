@@ -2,21 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.fionix.minima">
 
-    <!-- Permisions -->
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- Applications -->
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/config_network_security"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:networkSecurityConfig="@xml/network_security_config">
-
+        android:theme="@style/AppTheme">
+        <!-- Application start -->
         <activity
             android:name=".ActivitySplash"
             android:label="@string/app_name"
@@ -25,40 +25,25 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter android:label="@string/action_view">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="www.fionix.net"
-                    android:pathPrefix="/minima"
-                    android:scheme="https" />
-            </intent-filter>
         </activity>
-
-        <receiver android:name=".WidgetProvider">
+        <!-- Widget receiver -->
+        <receiver android:name=".widget.WidgetReceiver">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/info_widget" />
+                android:resource="@xml/widget_info" />
         </receiver>
-
+        <!-- Widget service -->
         <service
-            android:name=".WidgetService"
+            android:name=".widget.WidgetService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
-
-        <activity android:name=".ActivityTable"></activity>
-
-        <activity android:name=".ActivityMain"></activity>
-
-        <activity android:name=".ActivityIntro"></activity>
-
+        <activity android:name=".ActivityMain" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

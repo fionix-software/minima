@@ -9,17 +9,11 @@
     android:orientation="vertical"
     tools:context=".ActivitySplash">
 
-
     <ImageView
-        android:id="@+id/imageView1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:contentDescription="@string/splash_screen"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minima" />
+        app:srcCompat="@drawable/icon" />
 
 </LinearLayout>

@@ -1,61 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
-        android:key="application"
-        android:title="Application">
+    <androidx.preference.PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:key="application"
+        app:title="Application">
 
-        <Preference
-            android:key="preference_table"
-            android:summary="Create table, view your timetable and save as png."
-            android:title="Create Table" />
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_clear"
+            app:summary="Remove all registered course and timetable"
+            app:title="Clear data" />
 
-        <Preference
-            android:key="preference_reset"
-            android:summary="Remove all course and clear the timetable"
-            android:title="Reset Timetable" />
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_icress"
+            app:summary="Open iCress with browser"
+            app:title="Open iCress" />
 
-        <Preference
-            android:key="preference_guide"
-            android:summary="Click here for basic guide and walkthrough"
-            android:title="Guide" />
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_student_portal"
+            app:summary="Open iStudent with browser"
+            app:title="Open iStudent portal" />
 
-    </PreferenceCategory>
+    </androidx.preference.PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="link"
-        android:title="Link">
+    <androidx.preference.PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:key="about"
+        app:title="About">
 
-        <Preference
-            android:key="preference_icress"
-            android:summary="It will use your Android phone's browser"
-            android:title="Open iCress" />
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_email"
+            app:summary="Email feedback, issue report and request"
+            app:title="Email developer" />
 
-        <Preference
-            android:key="preference_student_portal"
-            android:summary="It will use your Android phone's browser"
-            android:title="Open Student Portal" />
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_contribute"
+            app:summary="Open Github page"
+            app:title="Contribute" />
 
-    </PreferenceCategory>
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_version"
+            app:summary="Open Fionix Software page"
+            app:title="Minima v0.0" />
 
-    <PreferenceCategory
-        android:key="about"
-        android:title="About">
-
-        <Preference
-            android:key="preference_email"
-            android:summary="Give feedback via email"
-            android:title="Feedback" />
-
-        <Preference
-            android:key="preference_conribute"
-            android:summary="Redirect to Github repository"
-            android:title="Contribute" />
-
-        <Preference
-            android:key="preference_version"
-            android:summary="Nazeb Zurati"
-            android:title="Minima v0.0" />
-
-    </PreferenceCategory>
-</PreferenceScreen>
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>
