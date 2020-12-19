@@ -2,7 +2,7 @@
 
 Minima is a minimal iCress application. Minima name is picked to be an alternative name for Lumos. In Harry Potter series, there is a spell called 'Lumos Maxima' which is the incantation to a charm that can be used to produce a blinding flash of bright white light from the tip of the wand. As an alternative, the Minima is the opposite for Maxima. Why picked the spell? Well, there is an existing iCress application at early time called 'Lumos' which was discontinued.
 
-Its initial development is on 5 Mar 2017 and was first published on 6 Mar 2017. Minima will be migrated to Flutter starts from version 4.0.0, released on 10 May 2020 but opted-out starting version 4.1.0 in favour of Kotlin due to lot of request to up the native version. Minima native will do tons of improvement and fixes. With this, Minima will be divided into two: Minima (Android native using Kotlin) and [Minima-X](https://github.com/fionix-software/minima-x) (cross platform using Flutter).
+Its initial development is on 5 Mar 2017 and was first published on 6 Mar 2017. Minima will be migrated to Flutter starts from version 4.0.0, released on 10 May 2020 but opted-out starting version 4.1.0 in favour of Kotlin due to lot of request to up the native version. Minima native will do tons of improvement and fixes.
 
 What is open source and why? Open-source software (OSS) is a type of computer software in which source code is released under a license in which the copyright holder grants users the rights to study, change, and distribute the software to anyone and for any purpose. Open-source software embrace strong values of community, collaboration, and transparency, for the mutual benefit of the platform and its users. Other than that, it is more cost-effective, flexible, and secure.
 
@@ -18,8 +18,6 @@ Please state your issue as shown below:
 - **Steps to reproduce (for report issue only)**: Clearly and chronologically (numbered list is recommended)
 - **Expectation (for report issue only)**: Explain how would you think it should behave / work.
 - **Platform info (for report issue only)**: Device full model (e.g. Google Pixel 4, Huawei Honor 8x, etc.).
-
-Currently Fionix only consist of one person. You can find him on twitter, [@NazebZurati](https://twitter.com/NazebZurati). If there are any concerns, please let him know.
 
 # Contribution
 
