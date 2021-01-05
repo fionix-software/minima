@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/exportButton"
+        android:icon="@drawable/ic_export_as_image"
+        android:title="@string/title_export_as_image"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/infoButton"
         android:icon="@drawable/ic_question_circle_solid"
         android:title="@string/title_info"

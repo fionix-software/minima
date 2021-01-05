@@ -1,13 +1,19 @@
 package net.fionix.minima
 
 import android.app.AlertDialog
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.github.tlaabs.timetableview.TimetableView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import net.fionix.minima.util.OnButtonClickDismissAlertDialog
+import net.fionix.minima.util.UtilBitmap
+import java.io.File
+import java.io.FileOutputStream
+
 
 class ActivityMain : AppCompatActivity() {
 
@@ -44,6 +50,11 @@ class ActivityMain : AppCompatActivity() {
                     currentBottomNavItem = R.id.navigation_setting
                 }
             }
+
+            // refresh options menu
+            invalidateOptionsMenu()
+
+            // return
             true
         }
 
@@ -54,8 +65,27 @@ class ActivityMain : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+
+        // check for null
+        if (menu == null) {
+            return false
+        }
+
+        // unhide when at navigation table
+        when (currentBottomNavItem) {
+            R.id.navigation_table -> {
+                menu.findItem(R.id.exportButton).isVisible = true;
+            }
+            else -> {
+                menu.findItem(R.id.exportButton).isVisible = false;
+            }
+        }
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -88,7 +118,36 @@ class ActivityMain : AppCompatActivity() {
                 // show
                 infoDialog.show()
             }
+
+            R.id.exportButton -> {
+
+                // change content of info menu button accordingly
+                when (currentBottomNavItem) {
+                    R.id.navigation_table -> {
+                        val fragmentView: View? = supportFragmentManager.fragments.last().view
+                        if (fragmentView != null) {
+                            val timetable: TimetableView = fragmentView.findViewById(R.id.timetable)
+                            val bitmap: Bitmap? = UtilBitmap.renderFromView(timetable.height, timetable.width, timetable)
+                            if (bitmap != null) {
+                                saveImage(bitmap)
+                            }
+                        }
+                    }
+                }
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun saveImage(bitmap: Bitmap) {
+        val dir: File? = getExternalFilesDir(null)
+        if (dir != null) {
+            val file = File(dir, "minima.png")
+            val fOut = FileOutputStream(file)
+
+            bitmap.compress(Bitmap.CompressFormat.PNG, 85, fOut)
+            fOut.flush()
+            fOut.close()
+        }
     }
 }
