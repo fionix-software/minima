@@ -79,10 +79,10 @@ class ActivityMain : AppCompatActivity() {
         // unhide when at navigation table
         when (currentBottomNavItem) {
             R.id.navigation_table -> {
-                menu.findItem(R.id.exportButton).isVisible = true;
+                menu.findItem(R.id.share_table).isVisible = true;
             }
             else -> {
-                menu.findItem(R.id.exportButton).isVisible = false;
+                menu.findItem(R.id.share_table).isVisible = false;
             }
         }
         return true
@@ -91,7 +91,7 @@ class ActivityMain : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.infoButton -> {
+            R.id.info -> {
 
                 // create info dialog
                 val infoDialog: AlertDialog.Builder = AlertDialog.Builder(this)
@@ -119,7 +119,7 @@ class ActivityMain : AppCompatActivity() {
                 infoDialog.show()
             }
 
-            R.id.exportButton -> {
+            R.id.share_table -> {
 
                 // change content of info menu button accordingly
                 when (currentBottomNavItem) {
@@ -127,7 +127,7 @@ class ActivityMain : AppCompatActivity() {
                         val fragmentView: View? = supportFragmentManager.fragments.last().view
                         if (fragmentView != null) {
                             val timetable: TimetableView = fragmentView.findViewById(R.id.timetable)
-                            val bitmap: Bitmap? = UtilBitmap.renderFromView(timetable.height, timetable.width, timetable)
+                            val bitmap: Bitmap? = UtilBitmap.renderFromView(timetable)
                             if (bitmap != null) {
                                 saveImage(bitmap)
                             }
