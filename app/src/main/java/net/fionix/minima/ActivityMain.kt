@@ -126,11 +126,11 @@ class ActivityMain : AppCompatActivity() {
                     R.id.navigation_table -> {
                         val fragmentView: View? = supportFragmentManager.fragments.last().view
                         if (fragmentView != null) {
-                            val timetable: TimetableView = fragmentView.findViewById(R.id.timetable)
-                            val bitmap: Bitmap? = UtilBitmap.renderFromView(timetable)
-                            if (bitmap != null) {
-                                saveImage(bitmap)
-                            }
+//                            val timetable: TimetableView = fragmentView.findViewById(R.id.timetable)
+//                            val bitmap: Bitmap? = UtilBitmap.renderFromView(timetable)
+//                            if (bitmap != null) {
+//                                saveImage(bitmap)
+//                            }
                         }
                     }
                 }

@@ -89,7 +89,7 @@
     <!-- timetable -->
     <string name="timetable_recheck">Recheck timetable online</string>
     <string-array name="timetable_header_title">
-        <item />
+        <item/>
         <item>Mon</item>
         <item>Tue</item>
         <item>Wed</item>

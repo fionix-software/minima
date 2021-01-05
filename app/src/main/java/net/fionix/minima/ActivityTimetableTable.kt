@@ -14,6 +14,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
+import net.fionix.minima.timetable.ViewTimetable
 import net.fionix.minima.util.OnButtonClickDismissAlertDialog
 import net.fionix.minima.util.UtilData
 import java.text.DateFormat
@@ -29,6 +30,7 @@ class ActivityTimetableTable : Fragment() {
         // inflate view
         val view = inflater.inflate(R.layout.activity_table_timetable, container, false)
 
+        /*
         // interface component
         val timetableView: TimetableView = view.findViewById(R.id.timetable)
 
@@ -96,7 +98,12 @@ class ActivityTimetableTable : Fragment() {
                 timetableView.add(scheduleList)
                 timetableView.setHeaderHighlight(UtilData.getDayOfTheWeek(SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time)) + 1)
             }
+        }
+        */
 
+        if (context != null) {
+            val timetableView = ViewTimetable(view.context)
+            timetableView.generateTimetableView(view.findViewById(R.id.tableLayout))
         }
 
         // return
