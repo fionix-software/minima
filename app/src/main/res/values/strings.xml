@@ -89,7 +89,6 @@
     <!-- timetable -->
     <string name="timetable_recheck">Recheck timetable online</string>
     <string-array name="timetable_header_title">
-        <item/>
         <item>Mon</item>
         <item>Tue</item>
         <item>Wed</item>
@@ -97,6 +96,15 @@
         <item>Fri</item>
         <item>Sat</item>
         <item>Sun</item>
+    </string-array>
+    <string-array name="timetable_weekdays">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
     </string-array>
     <string-array name="timetable_sticker_color">
         <item>#9966cc</item>

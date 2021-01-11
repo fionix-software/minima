@@ -4,9 +4,11 @@ import android.database.Cursor
 import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelCourse
 import java.text.DateFormat
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.time.minutes
 
 object UtilData {
 
@@ -16,6 +18,10 @@ object UtilData {
         // make a copy from existing dataset and fix by iteration
         val tempTimetableList: MutableList<EntityTimetable> = dataSet.toMutableList()
         for (tempTimetable in tempTimetableList) {
+
+            // lower case for easier fix
+            tempTimetable.timetableTimeStart = tempTimetable.timetableTimeStart.toLowerCase(Locale.getDefault())
+            tempTimetable.timetableTimeEnd = tempTimetable.timetableTimeEnd.toLowerCase(Locale.getDefault())
 
             // fix 12 noon as am
             if (tempTimetable.timetableTimeStart == "12:00 am") {
@@ -32,6 +38,10 @@ object UtilData {
             if (tempTimetable.timetableTimeEnd == "13:00 pm") {
                 tempTimetable.timetableTimeEnd = "1:00 pm"
             }
+
+            // fix lower case to upper case
+            tempTimetable.timetableTimeStart = tempTimetable.timetableTimeStart.toUpperCase(Locale.getDefault())
+            tempTimetable.timetableTimeEnd = tempTimetable.timetableTimeEnd.toUpperCase(Locale.getDefault())
 
             // fix XX:15 time represent as XX:5
             if (tempTimetable.timetableTimeStart.contains(":5 ")) {
@@ -65,11 +75,9 @@ object UtilData {
                 // fix partial upper case
                 if (tempFacultyNameList[index].contains("uitm")) {
                     tempFacultyNameList[index] = tempFacultyNameList[index].replace("uitm", "UiTM")
-                }
-                else if (tempFacultyNameList[index] == "n." || tempFacultyNameList[index] == "hep" || (tempFacultyNameList[index][0] == '[' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ']') || (tempFacultyNameList[index][0] == '(' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ')')) {
+                } else if (tempFacultyNameList[index] == "n." || tempFacultyNameList[index] == "hep" || (tempFacultyNameList[index][0] == '[' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ']') || (tempFacultyNameList[index][0] == '(' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ')')) {
                     tempFacultyNameList[index] = tempFacultyNameList[index].toUpperCase(Locale.getDefault())
-                }
-                else {
+                } else {
                     tempFacultyNameList[index] = tempFacultyNameList[index].capitalize(Locale.getDefault())
                 }
             }
@@ -198,8 +206,7 @@ object UtilData {
                 // flag
                 mergedNext = true
                 itemChanged = true
-            }
-            else {
+            } else {
                 mergedTimetableItem.add(dataSet[index])
             }
         }
@@ -250,4 +257,5 @@ object UtilData {
         // return
         return false
     }
+
 }
