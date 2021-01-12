@@ -7,10 +7,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.github.tlaabs.timetableview.TimetableView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import net.fionix.minima.util.OnButtonClickDismissAlertDialog
-import net.fionix.minima.util.UtilBitmap
 import java.io.File
 import java.io.FileOutputStream
 

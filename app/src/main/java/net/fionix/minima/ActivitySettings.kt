@@ -60,7 +60,7 @@ class ActivitySettings : PreferenceFragmentCompat() {
             intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
             intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text))
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, getString(R.string.email_intent_title)));
+            startActivity(Intent.createChooser(intent, getString(R.string.email_intent_title)))
             true
         }
 

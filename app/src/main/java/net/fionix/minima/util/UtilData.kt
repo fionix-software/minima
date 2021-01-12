@@ -4,11 +4,9 @@ import android.database.Cursor
 import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.model.ModelCourse
 import java.text.DateFormat
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.time.minutes
 
 object UtilData {
 
@@ -38,10 +36,6 @@ object UtilData {
             if (tempTimetable.timetableTimeEnd == "13:00 pm") {
                 tempTimetable.timetableTimeEnd = "1:00 pm"
             }
-
-            // fix lower case to upper case
-            tempTimetable.timetableTimeStart = tempTimetable.timetableTimeStart.toUpperCase(Locale.getDefault())
-            tempTimetable.timetableTimeEnd = tempTimetable.timetableTimeEnd.toUpperCase(Locale.getDefault())
 
             // fix XX:15 time represent as XX:5
             if (tempTimetable.timetableTimeStart.contains(":5 ")) {
@@ -154,7 +148,7 @@ object UtilData {
 
         // check for null and empty list
         if (dataSet.isEmpty()) {
-            return arrayListOf();
+            return arrayListOf()
         }
 
         // group by day

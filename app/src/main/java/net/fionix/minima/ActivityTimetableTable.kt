@@ -11,7 +11,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import net.fionix.minima.database.DatabaseMain
-import net.fionix.minima.model.EntityTimetable
 import net.fionix.minima.util.OnButtonClickDismissAlertDialog
 import net.fionix.minima.util.UtilData
 
@@ -25,18 +24,19 @@ class ActivityTimetableTable : Fragment() {
 
         // interface component
         val timetableView = ViewTimetable(view.context)
-        timetableView.generateTimetableView(view.findViewById(R.id.tableLayout))
+        timetableView.initTimetableView(view.findViewById(R.id.tableLayout))
 
         // get timetable list
         GlobalScope.launch(Dispatchers.IO) {
 
+            // get timetable list
             val timetableList = ArrayList(DatabaseMain.getDatabase(view.context).timetableDao().getList())
 
             // check if overlap timetable exist
             withContext(Dispatchers.Main) {
 
                 // generate timetable
-                timetableView.setTimetableData(timetableList, view.findViewById(R.id.relativeLayout))
+                timetableView.generateTimetableSticker(view.findViewById(R.id.relativeLayout), timetableList)
 
                 // overlap exist
                 if (UtilData.checkOverlapTimetableExist(timetableList)) {

@@ -34,7 +34,7 @@ class DialogAdd(context: Context) : Dialog(context) {
 
         // progress bar
         val progressBar: ProgressBar = findViewById(R.id.progressBar)
-        progressBar.visibility = View.GONE;
+        progressBar.visibility = View.GONE
 
         // edit texts
         val courseCodeEditText: EditText = findViewById(R.id.editText1)
@@ -54,7 +54,7 @@ class DialogAdd(context: Context) : Dialog(context) {
 
             // enable progress bar
             addButton.isEnabled = false
-            progressBar.visibility = View.VISIBLE;
+            progressBar.visibility = View.VISIBLE
 
             // start coroutine
             GlobalScope.launch(Dispatchers.IO) {
@@ -93,7 +93,7 @@ class DialogAdd(context: Context) : Dialog(context) {
                 // notify
                 withContext(Dispatchers.Main) {
                     Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
-                    progressBar.visibility = View.GONE;
+                    progressBar.visibility = View.GONE
                     addButton.isEnabled = true
                 }
             }

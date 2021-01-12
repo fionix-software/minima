@@ -12,4 +12,4 @@ data class ModelCourse(
         override val courseGroup: String,
         override val facultyCode: String,
         override val facultyName: String,
-) : IModelCourse {}
+) : IModelCourse

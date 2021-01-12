@@ -8,7 +8,8 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp">
 
         <TableLayout
             android:id="@+id/tableLayout"

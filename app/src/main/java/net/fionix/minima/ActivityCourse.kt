@@ -74,7 +74,7 @@ class ActivityCourse : Fragment(), OnCourseItemLongClickListener {
                 alertDialogBuilder.setPositiveButton(getString(R.string.dialog_button_yes), OnButtonClickConfirmDeleteCourseAlertDialog(view.context, courseList[itemIndex]) {
                     updateList()
                 })
-                alertDialogBuilder.setNegativeButton(getString(R.string.dialog_button_no), OnButtonClickDismissAlertDialog() {
+                alertDialogBuilder.setNegativeButton(getString(R.string.dialog_button_no), OnButtonClickDismissAlertDialog {
                     // without update list on dismiss, the item get missing
                     updateList()
                 })

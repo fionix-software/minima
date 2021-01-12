@@ -87,7 +87,11 @@
     <string name="shortcut_student_portal_long">Open iStudent portal in browser</string>
 
     <!-- timetable -->
+    <string name="uni_start_time">08:00 am</string>
     <string name="timetable_recheck">Recheck timetable online</string>
+    <string name="timetable_sticker_formatting">%1$s\n%2$s</string>
+    <string name="timetable_sticker_color">#9966cc</string>
+    <string name="timetable_sticker_text_color">#ffffff</string>
     <string-array name="timetable_header_title">
         <item>Mon</item>
         <item>Tue</item>
@@ -105,9 +109,6 @@
         <item>Friday</item>
         <item>Saturday</item>
         <item>Sunday</item>
-    </string-array>
-    <string-array name="timetable_sticker_color">
-        <item>#9966cc</item>
     </string-array>
 
 </resources>
