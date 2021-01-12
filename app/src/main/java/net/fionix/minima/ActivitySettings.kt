@@ -73,7 +73,7 @@ class ActivitySettings : PreferenceFragmentCompat() {
         }
 
         // open fionix page with browser
-        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("\$version", "v" + BuildConfig.VERSION_NAME)
+        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("\$version", BuildConfig.VERSION_NAME)
         preferenceManager.findPreference<Preference>("preference_version")?.setOnPreferenceClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(fionixPageLink)

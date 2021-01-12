@@ -1,12 +1,19 @@
 package net.fionix.minima
 
 import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import net.fionix.minima.util.OnButtonClickDismissAlertDialog
 import java.io.File
@@ -77,10 +84,10 @@ class ActivityMain : AppCompatActivity() {
         // unhide when at navigation table
         when (currentBottomNavItem) {
             R.id.navigation_table -> {
-                menu.findItem(R.id.share_table).isVisible = true;
+                menu.findItem(R.id.share_table).isVisible = true
             }
             else -> {
-                menu.findItem(R.id.share_table).isVisible = false;
+                menu.findItem(R.id.share_table).isVisible = false
             }
         }
         return true
@@ -122,13 +129,14 @@ class ActivityMain : AppCompatActivity() {
                 // change content of info menu button accordingly
                 when (currentBottomNavItem) {
                     R.id.navigation_table -> {
+
+                        // get fragment view
                         val fragmentView: View? = supportFragmentManager.fragments.last().view
                         if (fragmentView != null) {
-//                            val timetable: TimetableView = fragmentView.findViewById(R.id.timetable)
-//                            val bitmap: Bitmap? = UtilBitmap.renderFromView(timetable)
-//                            if (bitmap != null) {
-//                                saveImage(bitmap)
-//                            }
+
+                            // generate bitmap and share
+                            val bitmap = generateBitmap(fragmentView.findViewById(R.id.scrollView))
+                            shareBitmap(this, bitmap)
                         }
                     }
                 }
@@ -137,15 +145,38 @@ class ActivityMain : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun saveImage(bitmap: Bitmap) {
-        val dir: File? = getExternalFilesDir(null)
-        if (dir != null) {
-            val file = File(dir, "minima.png")
-            val fOut = FileOutputStream(file)
+    private fun generateBitmap(view: ScrollView): Bitmap {
 
-            bitmap.compress(Bitmap.CompressFormat.PNG, 85, fOut)
-            fOut.flush()
-            fOut.close()
+        // set background to white and draw canvas according to view
+        val bitmap = Bitmap.createBitmap(view.getChildAt(0).width, view.getChildAt(0).height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        canvas.drawColor(Color.WHITE)
+        view.draw(canvas)
+        return bitmap
+
+    }
+
+    private fun shareBitmap(context: Context, bitmap: Bitmap) {
+
+        // save bitmap file temporary in application data dir and get uri
+        val file = File(filesDir, getString(R.string.app_name) + ".png")
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, FileOutputStream(file))
+        val uri = FileProvider.getUriForFile(context, context.applicationContext.packageName.toString() + ".provider", file)
+
+        // init and open share intent
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "image/png"
+        intent.putExtra(Intent.EXTRA_STREAM, uri)
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+        // permission
+        val intentChooser = Intent.createChooser(intent, "Send timetable image")
+        val resInfoList = this.packageManager.queryIntentActivities(intentChooser, PackageManager.MATCH_DEFAULT_ONLY)
+        for (resolveInfo in resInfoList) {
+            val packageName = resolveInfo.activityInfo.packageName
+            grantUriPermission(packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
+        startActivity(intentChooser)
+
     }
 }

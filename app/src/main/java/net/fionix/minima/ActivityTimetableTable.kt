@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -22,9 +23,13 @@ class ActivityTimetableTable : Fragment() {
         // inflate view
         val view = inflater.inflate(R.layout.activity_table_timetable, container, false)
 
-        // interface component
+        // timetable view
         val timetableView = ViewTimetable(view.context)
         timetableView.initTimetableView(view.findViewById(R.id.tableLayout))
+
+        // banner text
+        val bannerText: TextView = view.findViewById(R.id.bannerText)
+        bannerText.text = getString(R.string.timetable_banner_text).replace("\$version", BuildConfig.VERSION_NAME)
 
         // get timetable list
         GlobalScope.launch(Dispatchers.IO) {

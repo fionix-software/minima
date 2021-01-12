@@ -90,8 +90,8 @@ class ViewTimetable(val context: Context) {
             tv.setPadding(10)
             tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 10f)
             tv.setTypeface(null, Typeface.BOLD)
-            tv.setTextColor(Color.parseColor(context.getString(R.string.timetable_sticker_text_color)))
-            tv.setBackgroundColor(Color.parseColor(context.getString(R.string.timetable_sticker_color)))
+            tv.setTextColor(Color.WHITE)
+            tv.setBackgroundColor(context.getColor(R.color.colorAccent))
 
             // add into relative layout
             relativeLayout.addView(tv)
