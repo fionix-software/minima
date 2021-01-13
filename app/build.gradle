@@ -8,7 +8,7 @@ android {
         applicationId "net.fionix.minima"
         minSdkVersion 29
         targetSdkVersion 30
-        versionCode 29
+        versionCode 30
         versionName "4.2.0-dev"
         vectorDrawables.useSupportLibrary = true
 
@@ -63,9 +63,6 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.3.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestUtil 'androidx.test:orchestrator:1.3.0'
-
-    // external library
-    implementation 'com.github.tlaabs:TimetableView:1.0.3-fx1'
 }
 
 repositories {

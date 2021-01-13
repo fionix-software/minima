@@ -24,10 +24,14 @@ class ViewTimetable(val context: Context) {
 
     // timetable sizing info
     private val dayCellHeight = 120
-    private val timeCellWidth = 100
+    private val timeCellWidth = 140
     private val endCellWidth = 50
     private var timetableCellHeight = dayCellHeight
     private var timetableCellWidth = 0
+
+    // sticker info
+    private val stickerTextPadding = 5
+    private val stickerTextFontSize = 10f
 
     fun initTimetableView(tableLayout: TableLayout) {
 
@@ -47,7 +51,12 @@ class ViewTimetable(val context: Context) {
 
             // create time indication cell
             val timeTextView = TextView(context)
-            timeTextView.text = (i + 8).toString()
+            if ((i + 8) in 1..12) {
+                timeTextView.text = context.getString(R.string.timetable_meridian_ante, i + 8)
+            } else {
+                timeTextView.text = context.getString(R.string.timetable_meridian_post, i - 4)
+            }
+            timeTextView.width = timeCellWidth
             timeTextView.gravity = Gravity.CENTER
             tableRow.addView(timeTextView)
 
@@ -83,24 +92,23 @@ class ViewTimetable(val context: Context) {
             param.setMargins(timeCellWidth + calculateDayOffset(it.timetableDay), dayCellHeight + calculateHeight(context.getString(R.string.uni_start_time), it.timetableTimeStart), 0, 0)
 
             // set textview info
-            val tv = TextView(context)
-            tv.layoutParams = param
-            tv.gravity = Gravity.CENTER
-            tv.text = context.getString(R.string.timetable_sticker_formatting, it.courseCode, it.timetableVenue)
-            tv.setPadding(10)
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 10f)
-            tv.setTypeface(null, Typeface.BOLD)
-            tv.setTextColor(Color.WHITE)
-            tv.setBackgroundColor(context.getColor(R.color.colorAccent))
+            val textView = TextView(context)
+            textView.layoutParams = param
+            textView.gravity = Gravity.CENTER
+            textView.text = context.getString(R.string.timetable_sticker_formatting, it.courseCode, it.timetableVenue)
+            textView.setPadding(stickerTextPadding)
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, stickerTextFontSize)
+            textView.setTypeface(null, Typeface.BOLD)
+            textView.setTextColor(Color.WHITE)
+            textView.background = ResourcesCompat.getDrawable(context.resources, R.drawable.view_timetable_sticker, null)
 
             // add into relative layout
-            relativeLayout.addView(tv)
+            relativeLayout.addView(textView)
         }
     }
 
     private fun initSizingInfo() {
-        val displayMetrics = context.resources.displayMetrics
-        val screenWidth = displayMetrics.widthPixels
+        val screenWidth = context.resources.displayMetrics.widthPixels
         timetableCellWidth = (screenWidth - timeCellWidth - endCellWidth) / context.resources.getStringArray(R.array.timetable_header_title).toList().size
     }
 
@@ -123,7 +131,7 @@ class ViewTimetable(val context: Context) {
             val textView = TextView(context)
             textView.text = it
             textView.height = dayCellHeight
-            textView.width = timeCellWidth
+            textView.width = timetableCellWidth
             textView.gravity = Gravity.CENTER
             tableRow.addView(textView)
         }

@@ -40,9 +40,6 @@ class ActivityTimetableTable : Fragment() {
             // check if overlap timetable exist
             withContext(Dispatchers.Main) {
 
-                // generate timetable
-                timetableView.generateTimetableSticker(view.findViewById(R.id.relativeLayout), timetableList)
-
                 // overlap exist
                 if (UtilData.checkOverlapTimetableExist(timetableList)) {
 
@@ -57,6 +54,11 @@ class ActivityTimetableTable : Fragment() {
 
                     // return
                     return@withContext
+
+                } else {
+
+                    // generate timetable
+                    timetableView.generateTimetableSticker(view.findViewById(R.id.relativeLayout), timetableList)
 
                 }
             }
