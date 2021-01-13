@@ -60,7 +60,7 @@ class ActivitySettings : PreferenceFragmentCompat() {
             intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
             intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_text))
             intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, getString(R.string.email_intent_title)));
+            startActivity(Intent.createChooser(intent, getString(R.string.email_intent_title)))
             true
         }
 
@@ -73,7 +73,7 @@ class ActivitySettings : PreferenceFragmentCompat() {
         }
 
         // open fionix page with browser
-        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("\$version", "v" + BuildConfig.VERSION_NAME)
+        preferenceManager.findPreference<Preference>("preference_version")?.title = getString(R.string.app_version).replace("\$version", BuildConfig.VERSION_NAME)
         preferenceManager.findPreference<Preference>("preference_version")?.setOnPreferenceClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(fionixPageLink)

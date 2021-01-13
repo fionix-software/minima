@@ -24,6 +24,10 @@ class TestData {
                 EntityTimetable(0, "-", "-", "-", "-", "-", "13:00 pm", "2:00 pm", "-", "-"),
                 EntityTimetable(0, "-", "-", "-", "-", "-", "11:00 am", "13:00 pm", "-", "-"),
         )
+        val fix12hFormatCaseDataArray: ArrayList<EntityTimetable> = arrayListOf(
+                EntityTimetable(0, "-", "-", "-", "-", "-", "13:00 PM", "2:00 PM", "-", "-"),
+                EntityTimetable(0, "-", "-", "-", "-", "-", "11:00 PM", "13:00 PM", "-", "-"),
+        )
         val fixMinute15DataArray: ArrayList<EntityTimetable> = arrayListOf(
                 EntityTimetable(0, "-", "-", "-", "EE", "-", "1:5 pm", "2:00 pm", "-", "-"),
                 EntityTimetable(0, "-", "-", "-", "EE", "-", "12:00 pm", "2:5 pm", "-", "-"),

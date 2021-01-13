@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="net.fionix.minima.ActivityTimetableTable">
 
-    <com.github.tlaabs.timetableview.TimetableView
-        android:id="@+id/timetable"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:column_count="8"
-        app:header_highlight_color="@color/colorAccent"
-        app:header_title="@array/timetable_header_title"
-        app:row_count="16"
-        app:side_cell_width="20dp"
-        app:start_time="8"
-        app:sticker_colors="@array/timetable_sticker_color" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/bannerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/not_available"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</ScrollView>

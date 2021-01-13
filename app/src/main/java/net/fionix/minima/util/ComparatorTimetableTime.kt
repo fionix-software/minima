@@ -29,6 +29,6 @@ class ComparatorTimetableTime : Comparator<EntityTimetable> {
         }
 
         // compare
-        return d0.compareTo(d1);
+        return d0.compareTo(d1)
     }
 }

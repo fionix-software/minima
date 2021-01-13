@@ -8,8 +8,8 @@ android {
         applicationId "net.fionix.minima"
         minSdkVersion 29
         targetSdkVersion 30
-        versionCode 29
-        versionName "4.1.0"
+        versionCode 30
+        versionName "4.2.0-dev"
         vectorDrawables.useSupportLibrary = true
 
         // test
@@ -37,10 +37,10 @@ android {
 dependencies {
 
     // room
-    kapt "androidx.room:room-compiler:2.2.5"
-    implementation "androidx.room:room-ktx:2.2.5"
-    implementation "androidx.room:room-runtime:2.2.5"
-    androidTestImplementation "androidx.room:room-testing:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.6"
+    implementation "androidx.room:room-ktx:2.2.6"
+    implementation "androidx.room:room-runtime:2.2.6"
+    androidTestImplementation "androidx.room:room-testing:2.2.6"
 
     // lifecycle
     implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
@@ -63,9 +63,6 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.3.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestUtil 'androidx.test:orchestrator:1.3.0'
-
-    // external library
-    implementation 'com.github.tlaabs:TimetableView:1.0.3-fx1'
 }
 
 repositories {

@@ -17,6 +17,10 @@ object UtilData {
         val tempTimetableList: MutableList<EntityTimetable> = dataSet.toMutableList()
         for (tempTimetable in tempTimetableList) {
 
+            // lower case for easier fix
+            tempTimetable.timetableTimeStart = tempTimetable.timetableTimeStart.toLowerCase(Locale.getDefault())
+            tempTimetable.timetableTimeEnd = tempTimetable.timetableTimeEnd.toLowerCase(Locale.getDefault())
+
             // fix 12 noon as am
             if (tempTimetable.timetableTimeStart == "12:00 am") {
                 tempTimetable.timetableTimeStart = "12:00 pm"
@@ -65,11 +69,9 @@ object UtilData {
                 // fix partial upper case
                 if (tempFacultyNameList[index].contains("uitm")) {
                     tempFacultyNameList[index] = tempFacultyNameList[index].replace("uitm", "UiTM")
-                }
-                else if (tempFacultyNameList[index] == "n." || tempFacultyNameList[index] == "hep" || (tempFacultyNameList[index][0] == '[' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ']') || (tempFacultyNameList[index][0] == '(' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ')')) {
+                } else if (tempFacultyNameList[index] == "n." || tempFacultyNameList[index] == "hep" || (tempFacultyNameList[index][0] == '[' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ']') || (tempFacultyNameList[index][0] == '(' && tempFacultyNameList[index][tempFacultyNameList[index].length - 1] == ')')) {
                     tempFacultyNameList[index] = tempFacultyNameList[index].toUpperCase(Locale.getDefault())
-                }
-                else {
+                } else {
                     tempFacultyNameList[index] = tempFacultyNameList[index].capitalize(Locale.getDefault())
                 }
             }
@@ -146,7 +148,7 @@ object UtilData {
 
         // check for null and empty list
         if (dataSet.isEmpty()) {
-            return arrayListOf();
+            return arrayListOf()
         }
 
         // group by day
@@ -198,8 +200,7 @@ object UtilData {
                 // flag
                 mergedNext = true
                 itemChanged = true
-            }
-            else {
+            } else {
                 mergedTimetableItem.add(dataSet[index])
             }
         }
@@ -250,4 +251,5 @@ object UtilData {
         // return
         return false
     }
+
 }

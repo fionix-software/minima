@@ -25,6 +25,15 @@ class DataTest {
     }
 
     @Test
+    fun fix12hFormatCaseDataFixerTest() {
+        assert(TestData.fix12hFormatCaseDataArray[0].timetableTimeStart == "13:00 PM")
+        assert(TestData.fix12hFormatCaseDataArray[1].timetableTimeEnd == "13:00 PM")
+        val fixedData = UtilData.fixTimetable(TestData.fix12hFormatDataArray)
+        assert(fixedData[0].timetableTimeStart == "1:00 pm")
+        assert(fixedData[1].timetableTimeEnd == "1:00 pm")
+    }
+
+    @Test
     fun fixMinute15DataFixerTest() {
         assert(TestData.fixMinute15DataArray[0].timetableTimeStart == "1:5 pm")
         assert(TestData.fixMinute15DataArray[1].timetableTimeEnd == "2:5 pm")
