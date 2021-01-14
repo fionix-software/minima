@@ -57,6 +57,11 @@ class ActivityMain : AppCompatActivity() {
             // return
             true
         }
+
+        // opens course fragment if not set
+        if (supportFragmentManager.findFragmentById(R.id.content) == null) {
+            supportFragmentManager.beginTransaction().replace(R.id.content, ActivityCourse()).commit()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
