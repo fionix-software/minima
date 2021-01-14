@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config xmlns:tools="http://schemas.android.com/tools">
     <!-- This is due to clear text HTTP traffic is disabled by default -->
-    <base-config cleartextTrafficPermitted="true"
+    <base-config
+        cleartextTrafficPermitted="true"
         tools:ignore="InsecureBaseConfiguration" />
 </network-security-config>

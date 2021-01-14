@@ -8,6 +8,12 @@
 
         <androidx.preference.Preference
             app:iconSpaceReserved="false"
+            app:key="preference_theme"
+            app:summary="Select them for Minima"
+            app:title="Theme" />
+
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
             app:key="preference_clear"
             app:summary="Remove all registered course and timetable"
             app:title="Clear data" />
@@ -34,7 +40,7 @@
         <androidx.preference.Preference
             app:iconSpaceReserved="false"
             app:key="preference_email"
-            app:summary="Email feedback, issue report and request"
+            app:summary="Email feedback, report issue and request feature"
             app:title="Email developer" />
 
         <androidx.preference.Preference
@@ -42,6 +48,12 @@
             app:key="preference_contribute"
             app:summary="Open Github page"
             app:title="Contribute" />
+
+        <androidx.preference.Preference
+            app:iconSpaceReserved="false"
+            app:key="preference_donate"
+            app:summary="Open Ko-Fi page"
+            app:title="Donate" />
 
         <androidx.preference.Preference
             app:iconSpaceReserved="false"

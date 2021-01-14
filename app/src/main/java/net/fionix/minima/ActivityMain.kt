@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -22,7 +21,7 @@ import java.io.FileOutputStream
 
 class ActivityMain : AppCompatActivity() {
 
-    private var currentBottomNavItem: Int = 0
+    private var currentBottomNavItem: Int = R.id.navigation_view
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -31,26 +30,22 @@ class ActivityMain : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // bottom navigation
-        val bottomNav = findViewById<View>(R.id.navigation) as BottomNavigationView
+        val bottomNav = findViewById<BottomNavigationView>(R.id.navigation)
         bottomNav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_view -> {
-                    supportActionBar!!.title = getString(R.string.title_course_list)
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivityCourse()).commit()
                     currentBottomNavItem = R.id.navigation_view
                 }
                 R.id.navigation_list -> {
-                    supportActionBar!!.title = getString(R.string.title_timetable_list)
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivityTimetableList()).commit()
                     currentBottomNavItem = R.id.navigation_list
                 }
                 R.id.navigation_table -> {
-                    supportActionBar!!.title = getString(R.string.title_timetable_table)
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivityTimetableTable()).commit()
                     currentBottomNavItem = R.id.navigation_table
                 }
                 R.id.navigation_setting -> {
-                    supportActionBar!!.title = getString(R.string.title_setting)
                     supportFragmentManager.beginTransaction().replace(R.id.content, ActivitySettings()).commit()
                     currentBottomNavItem = R.id.navigation_setting
                 }
@@ -62,11 +57,6 @@ class ActivityMain : AppCompatActivity() {
             // return
             true
         }
-
-        // open default
-        supportActionBar!!.title = getString(R.string.title_course_list)
-        supportFragmentManager.beginTransaction().replace(R.id.content, ActivityCourse()).commit()
-        currentBottomNavItem = R.id.navigation_view
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

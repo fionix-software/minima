@@ -96,7 +96,7 @@ class ViewTimetable(val context: Context) {
             val textView = TextView(context)
             textView.layoutParams = param
             textView.gravity = Gravity.CENTER
-            textView.text = context.getString(R.string.timetable_sticker_formatting, it.courseCode, it.timetableVenue)
+            textView.text = context.getString(R.string.timetable_sticker_formatting, it.courseCode, it.timetableVenue, it.courseGroup)
             textView.setPadding(stickerTextPadding)
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, stickerTextFontSize)
             textView.setTypeface(null, Typeface.BOLD)
