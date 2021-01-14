@@ -58,6 +58,7 @@ class ViewTimetable(val context: Context) {
             }
             timeTextView.width = timeCellWidth
             timeTextView.gravity = Gravity.CENTER
+            timeTextView.setTextColor(Color.DKGRAY)
             tableRow.addView(timeTextView)
 
             // add text view header for each column
@@ -133,6 +134,7 @@ class ViewTimetable(val context: Context) {
             textView.height = dayCellHeight
             textView.width = timetableCellWidth
             textView.gravity = Gravity.CENTER
+            textView.setTextColor(Color.DKGRAY)
             tableRow.addView(textView)
         }
 

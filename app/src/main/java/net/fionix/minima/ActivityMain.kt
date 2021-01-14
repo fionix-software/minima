@@ -147,11 +147,9 @@ class ActivityMain : AppCompatActivity() {
 
     private fun generateBitmap(view: ScrollView): Bitmap {
 
-        // set background to white and draw canvas according to view
+        // draw canvas according to view
         val bitmap = Bitmap.createBitmap(view.getChildAt(0).width, view.getChildAt(0).height, Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(bitmap)
-        canvas.drawColor(Color.WHITE)
-        view.draw(canvas)
+        view.draw(Canvas(bitmap))
         return bitmap
 
     }
