@@ -58,7 +58,7 @@ class ActivityTimetableTable : Fragment() {
 
                     // return
                     return@withContext
-                    
+
                 } else {
 
                     // generate timetable

@@ -8,6 +8,17 @@ What is open source and why? Open-source software (OSS) is a type of computer so
 
 Officialy available on [Google Play Store](https://play.google.com/store/apps/details?id=net.fionix.minima).
 
+## Feature
+
+- Able to fetch timetable iCress automatically using added course
+- Able to view timetable in list view or timetable view
+- Able to view timetable in homescreen using its homescreen widget
+- Able to share timetable view as image
+- Able to recheck added course timetable on iCress by one button click
+- Able to open UiTM student links (iStudent and iCress) using app shortcuts
+- Able to switch app theme between light, dark or system default
+- Able to add course name and update timetable venue
+
 # Support
 
 If there is any issue arise, please use the [issue tracker](https://github.com/fionix-software/minima/issues) wisely. Please make sure there is no duplication and try your best to explain in detail and respectful manner.
@@ -21,7 +32,7 @@ Please state your issue as shown below:
 
 # Contribution
 
-You can contribute in many ways. You don't have to contribute code and you can contribute by planning evens, design, write documentations, reviews, promotes and many more! Refer [here](https://opensource.guide/how-to-contribute/) for more. You can direct message the maintainer on twitter (as stated above) for inquiries.
+You can contribute in many ways. You don't have to contribute code and you can contribute by planning events, design, write documentations, reviews, promotes and many more! Refer [here](https://opensource.guide/how-to-contribute/) for more. You can direct message the maintainer on twitter (as stated above) for inquiries.
 
 If you were to contribute to the project by code, please follow Github's Fork & Pull guide stated [here](https://reflectoring.io/github-fork-and-pull/). Make sure to update your forked repository to upstream before working on it, or at least before submitting the changes. After submitting the changes, please make a pull request and have a discussion.
 

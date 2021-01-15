@@ -60,6 +60,7 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
                 val tempFacultyList: ArrayList<ModelFaculty> = arrayListOf()
                 val tempCourseList: ArrayList<ModelCourse> = arrayListOf()
                 for (courseItem in courseListFromDatabase) {
+
                     // parse faculty
                     val faculty = ModelFaculty(courseItem.facultyCode, courseItem.facultyName)
                     if (faculty !in tempFacultyList) {
@@ -98,9 +99,8 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
                     // notify
                     withContext(Dispatchers.Main) {
 
+                        // display context
                         if (context != null) {
-
-                            // display context
                             Toast.makeText(context, getString(R.string.failed_recheck_timetable), Toast.LENGTH_SHORT).show()
                             progressBar.visibility = View.GONE
                         }

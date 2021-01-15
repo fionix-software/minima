@@ -28,7 +28,7 @@
             app:iconSpaceReserved="false"
             app:key="preference_student_portal"
             app:summary="Open iStudent with browser"
-            app:title="Open iStudent portal" />
+            app:title="Open iStudent" />
 
     </androidx.preference.PreferenceCategory>
 

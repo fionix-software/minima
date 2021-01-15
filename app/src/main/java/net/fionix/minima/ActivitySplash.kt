@@ -26,12 +26,12 @@ class ActivitySplash : AppCompatActivity() {
         }, 1000)
 
         // shortcuts
-        val iCressShortcut = ShortcutInfo.Builder(applicationContext, "link_icress").setShortLabel(getString(R.string.shortcut_icress_short)).setLongLabel(getString(R.string.shortcut_icress_long)).setIcon(Icon.createWithResource(applicationContext, R.drawable.ic_external_link_square_alt_solid)).setIntent(Intent(Intent.ACTION_VIEW, Uri.parse("http://icress.uitm.edu.my/"))).build()
-        val studentPortalShortcut = ShortcutInfo.Builder(applicationContext, "link_student_portal").setShortLabel(getString(R.string.shortcut_student_portal_short)).setLongLabel(getString(R.string.shortcut_student_portal_long)).setIcon(Icon.createWithResource(applicationContext, R.drawable.ic_external_link_square_alt_solid)).setIntent(Intent(Intent.ACTION_VIEW, Uri.parse("https://simsweb.uitm.edu.my/SPORTAL_APP/SPORTAL_LOGIN/index.htm"))).build()
+        val iCressShortcut = ShortcutInfo.Builder(applicationContext, "link_icress").setShortLabel(getString(R.string.shortcut_icress_short)).setLongLabel(getString(R.string.shortcut_icress_long)).setIcon(Icon.createWithResource(applicationContext, R.drawable.ic_shortcut_link_solid)).setIntent(Intent(Intent.ACTION_VIEW, Uri.parse("http://icress.uitm.edu.my/"))).build()
+        val studentPortalShortcut = ShortcutInfo.Builder(applicationContext, "link_student_portal").setShortLabel(getString(R.string.shortcut_student_portal_short)).setLongLabel(getString(R.string.shortcut_student_portal_long)).setIcon(Icon.createWithResource(applicationContext, R.drawable.ic_shortcut_link_solid)).setIntent(Intent(Intent.ACTION_VIEW, Uri.parse("https://simsweb.uitm.edu.my/SPORTAL_APP/SPORTAL_LOGIN/index.htm"))).build()
 
         // add dynamic shortcuts
         val shortcutManager = getSystemService(ShortcutManager::class.java)
-        shortcutManager!!.dynamicShortcuts = listOf(iCressShortcut, studentPortalShortcut)
+        shortcutManager!!.dynamicShortcuts = listOf(studentPortalShortcut, iCressShortcut)
 
         // set theme based on shared preference
         when (UtilTheme.getSharedPrefValue(this)) {
