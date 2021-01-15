@@ -41,11 +41,11 @@ class ActivitySettings : PreferenceFragmentCompat() {
             builder.setSingleChoiceItems(themeOption, themeStatus.id) { dialog, selectedId ->
                 when (selectedId) {
                     // light
-                    0 -> {
+                    UtilTheme.ThemeStatus.LIGHT.id -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     }
                     // dark
-                    1 -> {
+                    UtilTheme.ThemeStatus.DARK.id -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     }
                     // system default

@@ -62,8 +62,11 @@ class DialogAdd(context: Context) : Dialog(context) {
                 // retrieve faculty
                 val facultyList: ArrayList<ModelFaculty> = UtilScraper.retrieveFacultyList()
                 if (facultyList.isEmpty()) {
+
                     // notify
                     withContext(Dispatchers.Main) {
+
+                        // display toast
                         Toast.makeText(context, context.getString(R.string.failed_get_faculty_info), Toast.LENGTH_SHORT).show()
                         progressBar.visibility = View.GONE
                         addButton.isEnabled = true
@@ -78,6 +81,8 @@ class DialogAdd(context: Context) : Dialog(context) {
 
                     // notify
                     withContext(Dispatchers.Main) {
+
+                        // display toast
                         Toast.makeText(context, context.getString(R.string.failed_get_timetable_info), Toast.LENGTH_SHORT).show()
                         progressBar.visibility = View.GONE
                         addButton.isEnabled = true
@@ -92,6 +97,8 @@ class DialogAdd(context: Context) : Dialog(context) {
 
                 // notify
                 withContext(Dispatchers.Main) {
+
+                    // display toast
                     Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                     progressBar.visibility = View.GONE
                     addButton.isEnabled = true

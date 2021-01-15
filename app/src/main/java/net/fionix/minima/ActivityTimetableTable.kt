@@ -40,11 +40,15 @@ class ActivityTimetableTable : Fragment() {
             // check if overlap timetable exist
             withContext(Dispatchers.Main) {
 
+                if (context == null) {
+                    return@withContext
+                }
+
                 // overlap exist
                 if (UtilData.checkOverlapTimetableExist(timetableList)) {
 
                     // confirmation dialog
-                    val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(view.context)
+                    val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(context)
                     alertDialogBuilder.setTitle(getString(R.string.dialog_overlap_timetable_title))
                     alertDialogBuilder.setMessage(R.string.dialog_overlap_timetable_message)
                     alertDialogBuilder.setNegativeButton(getString(R.string.dialog_button_dismiss), OnButtonClickDismissAlertDialog {
@@ -54,12 +58,11 @@ class ActivityTimetableTable : Fragment() {
 
                     // return
                     return@withContext
-
+                    
                 } else {
 
                     // generate timetable
                     timetableView.generateTimetableSticker(view.findViewById(R.id.relativeLayout), timetableList)
-
                 }
             }
         }

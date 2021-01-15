@@ -52,6 +52,8 @@ class DialogEditCourseName(context: Context, val data: ModelCourse) : Dialog(con
 
                 // close dialog
                 withContext(Dispatchers.Main) {
+
+                    // display toast
                     Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                     dismiss()
                 }
