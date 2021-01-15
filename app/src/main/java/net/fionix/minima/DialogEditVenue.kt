@@ -52,6 +52,8 @@ class DialogEditVenue(context: Context, val data: EntityTimetable) : Dialog(cont
 
                 // close dialog
                 withContext(Dispatchers.Main) {
+
+                    // display toast
                     Toast.makeText(context, context.getString(R.string.success), Toast.LENGTH_SHORT).show()
                     dismiss()
                 }

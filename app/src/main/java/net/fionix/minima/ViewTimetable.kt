@@ -58,6 +58,7 @@ class ViewTimetable(val context: Context) {
             }
             timeTextView.width = timeCellWidth
             timeTextView.gravity = Gravity.CENTER
+            timeTextView.setTextColor(Color.DKGRAY)
             tableRow.addView(timeTextView)
 
             // add text view header for each column
@@ -91,11 +92,17 @@ class ViewTimetable(val context: Context) {
             param.addRule(RelativeLayout.ALIGN_PARENT_LEFT)
             param.setMargins(timeCellWidth + calculateDayOffset(it.timetableDay), dayCellHeight + calculateHeight(context.getString(R.string.uni_start_time), it.timetableTimeStart), 0, 0)
 
+            // check venue
+            var timetableVenue = it.timetableVenue
+            if (timetableVenue.isEmpty()) {
+                timetableVenue = "-"
+            }
+
             // set textview info
             val textView = TextView(context)
             textView.layoutParams = param
             textView.gravity = Gravity.CENTER
-            textView.text = context.getString(R.string.timetable_sticker_formatting, it.courseCode, it.timetableVenue)
+            textView.text = context.getString(R.string.timetable_sticker_formatting, it.courseCode, timetableVenue, it.courseGroup)
             textView.setPadding(stickerTextPadding)
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, stickerTextFontSize)
             textView.setTypeface(null, Typeface.BOLD)
@@ -133,6 +140,7 @@ class ViewTimetable(val context: Context) {
             textView.height = dayCellHeight
             textView.width = timetableCellWidth
             textView.gravity = Gravity.CENTER
+            textView.setTextColor(Color.DKGRAY)
             tableRow.addView(textView)
         }
 

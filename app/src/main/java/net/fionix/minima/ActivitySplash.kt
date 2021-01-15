@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import net.fionix.minima.util.UtilTheme
 
 class ActivitySplash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,5 +33,20 @@ class ActivitySplash : AppCompatActivity() {
         val shortcutManager = getSystemService(ShortcutManager::class.java)
         shortcutManager!!.dynamicShortcuts = listOf(iCressShortcut, studentPortalShortcut)
 
+        // set theme based on shared preference
+        when (UtilTheme.getSharedPrefValue(this)) {
+            // light
+            UtilTheme.ThemeStatus.LIGHT -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+            // dark
+            UtilTheme.ThemeStatus.DARK -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            // system default
+            else -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            }
+        }
     }
 }

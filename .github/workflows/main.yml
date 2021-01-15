@@ -2,10 +2,10 @@ name: Native CI
 
 on:
   push:
-    branches: [ native ]
+    branches: [ main ]
     
   pull_request:
-    branches: [ native ]
+    branches: [ main ]
 
 jobs:
   build:

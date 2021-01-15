@@ -97,9 +97,13 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
                     // notify
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(context, getString(R.string.failed_recheck_timetable), Toast.LENGTH_SHORT).show()
-                        progressBar.visibility = View.GONE
 
+                        if (context != null) {
+
+                            // display context
+                            Toast.makeText(context, getString(R.string.failed_recheck_timetable), Toast.LENGTH_SHORT).show()
+                            progressBar.visibility = View.GONE
+                        }
                     }
 
                     // return
@@ -120,11 +124,16 @@ class ActivityTimetableList : Fragment(), OnTimetableItemLongClickListener {
 
                 // notify
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(context, getString(R.string.success), Toast.LENGTH_SHORT).show()
-                    progressBar.visibility = View.GONE
 
-                    // update list
-                    updateList()
+                    if (context != null) {
+
+                        // display toast
+                        Toast.makeText(context, getString(R.string.success), Toast.LENGTH_SHORT).show()
+                        progressBar.visibility = View.GONE
+
+                        // update list
+                        updateList()
+                    }
                 }
             }
         }
