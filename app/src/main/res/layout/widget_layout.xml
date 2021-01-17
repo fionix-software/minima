@@ -8,8 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:orientation="horizontal">
+        android:background="@drawable/view_widget_header"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <TextView
             android:id="@+id/textView"
@@ -29,7 +31,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:contentDescription="@string/refresh"
-            android:padding="15dp"
+            android:padding="7.5dp"
             android:src="@drawable/ic_sync_alt_solid" />
     </LinearLayout>
 
@@ -37,5 +39,5 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff" />
+        android:background="@drawable/view_widget_list" />
 </LinearLayout>
