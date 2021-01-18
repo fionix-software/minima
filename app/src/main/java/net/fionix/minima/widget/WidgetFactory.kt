@@ -5,9 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService.RemoteViewsFactory
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import net.fionix.minima.R
 import net.fionix.minima.database.DatabaseMain
 import net.fionix.minima.model.EntityTimetable
@@ -18,7 +15,7 @@ import kotlin.collections.ArrayList
 class WidgetFactory(var context: Context, intent: Intent) : RemoteViewsFactory {
 
     private val appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID) - WidgetReceiver.randomNumber
-    private lateinit var timetableList: ArrayList<EntityTimetable>
+    private var timetableList: ArrayList<EntityTimetable> = arrayListOf()
 
     override fun getViewAt(index: Int): RemoteViews {
 
@@ -48,9 +45,6 @@ class WidgetFactory(var context: Context, intent: Intent) : RemoteViewsFactory {
     }
 
     override fun getCount(): Int {
-        if (!this::timetableList.isInitialized) {
-            return 0
-        }
         return timetableList.size
     }
 
@@ -66,13 +60,11 @@ class WidgetFactory(var context: Context, intent: Intent) : RemoteViewsFactory {
         return false
     }
 
-    override fun onCreate() {
-        GlobalScope.launch(Dispatchers.IO) {
-            timetableList = ArrayList(DatabaseMain.getDatabase(context).timetableDao().getListByDay(SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time)))
-        }
-    }
+    override fun onCreate() {}
 
-    override fun onDataSetChanged() {}
+    override fun onDataSetChanged() {
+        timetableList = ArrayList(DatabaseMain.getDatabase(context).timetableDao().getListByDay(SimpleDateFormat("EEEE", Locale.ENGLISH).format(Calendar.getInstance().time)))
+    }
 
     override fun onDestroy() {}
 
