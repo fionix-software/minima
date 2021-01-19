@@ -43,6 +43,7 @@ open class WidgetReceiver : AppWidgetProvider() {
         }
 
         // super
+        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.listView);
         super.onUpdate(context, appWidgetManager, appWidgetIds)
     }
 
@@ -65,7 +66,7 @@ open class WidgetReceiver : AppWidgetProvider() {
             appWidgetManager.updateAppWidget(ComponentName(context, WidgetReceiver::class.java), remoteViews)
 
             // toast
-            Toast.makeText(context, "Refresh", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, context.getString(R.string.widget_refresh), Toast.LENGTH_SHORT).show()
         }
     }
 

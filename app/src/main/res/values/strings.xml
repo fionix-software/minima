@@ -26,6 +26,7 @@
     <string name="save">Save</string>
     <string name="not_available">n/a</string>
     <string name="refresh">Refresh</string>
+    <string name="widget_refresh">Refreshing</string>
     <string name="success">Success</string>
     <string name="invalid_course_info">Invalid course information</string>
     <string name="invalid_course_name">Invalid course name</string>
